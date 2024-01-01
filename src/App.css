@@ -1,0 +1,106 @@
+body {
+  font-family: 'Share Tech', sans-serif !important;
+}
+
+.nav-p-bg {
+  background-color: #090851;
+}
+
+.primary-bg {
+  background: linear-gradient(172deg, #090851, #3a28da);
+}
+
+.primary-bg-50 {
+  background: linear-gradient(172deg, #4937f3b3, #090851a5);
+}
+
+
+
+.tool-btn {
+  box-shadow: inset 0px 1px 3px 0px #91b8b3;
+  background: linear-gradient(to bottom, #566ad2 5%, #3e54b5 100%);
+  background-color: #566ad2;
+  border-radius: 5px;
+  border: 1px solid #566963;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  width: 290px;
+
+  font-family: share tech, Sans-serif;
+  font-size: 29px;
+  font-weight: 500;
+  text-align: center;
+  padding: 4px 13px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #2b665e;
+}
+
+.tool-btn:hover {
+  background: linear-gradient(to bottom, #3e54b5 5%, #566ad2 100%);
+  background-color: #3e54b5;
+  color: wheat;
+}
+
+.tool-btn:active {
+  position: relative;
+  top: 2px;
+  left: 1px;
+}
+
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #201790;
+  font-size: 18px;
+  border-radius: 0px;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  border: 3px solid #21189575;
+  transition: 0.3s;
+  transform: skew(-20deg);
+  background-color: #e3e3e3;
+}
+
+.submit-btn:hover {
+  transform: none;
+}
+
+
+
+
+
+a.gp-top {
+  position: absolute;
+  left: 29px;
+  font-size: 36px;
+}
+
+code {
+  font-family: 'Mitr';
+}
+
+.dropdown-menu {
+  min-width: 4rem;
+}
+
+
+.add-question-btn {
+  margin-right: 40px !important;
+  margin-top: 10px !important;
+  height: 40px;
+  width: 100px;
+  background: #FBB040;
+  margin: 1rem;
+  border-radius: 5px;
+  padding-top: 8.5px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #DC8B13, #e69b00, #e5de00, #e69b00, #DC8B13);
+  background-size: 300% 300%;
+  animation: gradient 7s ease infinite;
+}

@@ -1,51 +1,37 @@
-import React, { useState, useEffect } from 'react'
-
-
-import Editor from './Editor'
-import useLocalStorage from '../../../hooks/useLocalStorage'
-
+import React, { useState, useEffect } from 'react';
+import Editor from './Editor';
+import useLocalStorage from '../../../hooks/useLocalStorage';
 
 function OnlineCodeEditor() {
-    const [html, setHtml] = useLocalStorage('html', '')
-    const [css, setCss] = useLocalStorage('css', '')
-    const [javascript, setJavascript] = useLocalStorage('javascript', '')
-    const [srcDoc, setSrcDoc] = useState('')
+    const [html, setHtml] = useLocalStorage('html', '');
+    const [css, setCss] = useLocalStorage('css', '');
+    const [javascript, setJavascript] = useLocalStorage('javascript', '');
+    const [srcDoc, setSrcDoc] = useState('');
 
     useEffect(() => {
-        const timeout = setTimeout(() => {
+        const updateSrcDoc = () => {
             setSrcDoc(`
         <html>
           <body>${html}</body>
           <style>${css}</style>
           <script>${javascript}</script>
         </html>
-      `)
-        }, 250)
-        // console.log(srcDoc)
-        return () => clearTimeout(timeout)
-    }, [html, css, javascript])
+      `);
+        };
+
+        const timeoutId = setTimeout(updateSrcDoc, 250);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [html, css, javascript]);
 
     return (
         <div className="app">
-            <div className="mx-auto row top-pane w-100 py-3">
-                <Editor
-                    launguage="xml"
-                    label="HTML"
-                    value={html}
-                    onChange={setHtml}
-                />
-                <Editor
-                    launguage="css"
-                    label="CSS"
-                    value={css}
-                    onChange={setCss}
-                />
-                <Editor
-                    launguage="javascript"
-                    label="JavaScript"
-                    value={javascript}
-                    onChange={setJavascript}
-                />
+            <div className="d-flex flex-wrap top-pane w-100 py-3">
+                <Editor language="xml" label="HTML" value={html} onChange={setHtml} />
+                <Editor language="css" label="CSS" value={css} onChange={setCss} />
+                <Editor language="javascript" label="JavaScript" value={javascript} onChange={setJavascript} />
             </div>
             <div className="bottom-pane">
                 <iframe
@@ -61,4 +47,4 @@ function OnlineCodeEditor() {
     );
 }
 
-export default OnlineCodeEditor
+export default OnlineCodeEditor;

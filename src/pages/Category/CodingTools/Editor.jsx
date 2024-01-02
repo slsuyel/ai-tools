@@ -3,9 +3,7 @@ import React, { useState } from 'react'
 import { Controlled as CodeMirror } from 'react-codemirror2'
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";
-import "codemirror/mode/xml/xml"
-import "codemirror/mode/css/css"
-import "codemirror/mode/javascript/javascript"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExpandAlt, faCompressAlt } from '@fortawesome/free-solid-svg-icons'
 import "./OnlineCodeEditor.css"
@@ -19,8 +17,8 @@ const Editor = (props) => {
     }
 
     return (
-        <div className={`editor-container ${open ? '' : 'collapsed'}`}>
-            <div className="editor-title">
+        <div className={`col-md-4 editor-container ${open ? '' : 'collapsed'}`}>
+            <div className="editor-title ">
                 {label}
                 <button
                     type="button"

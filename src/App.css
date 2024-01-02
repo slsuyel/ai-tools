@@ -71,8 +71,27 @@ body {
   transform: none;
 }
 
+.copy-btn {
+  position: absolute;
+  top: 56px;
+  left: 18px;
+  background-image: linear-gradient(to bottom, #0679c5, #0f5da1);
+  border: navajowhite;
+  color: white;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
 
-
+.format-code {
+  position: absolute;
+  top: 66px;
+  right: 18px;
+  background-image: linear-gradient(to bottom, #161074b8, #0f5da1);
+  border: navajowhite;
+  color: white;
+  border-radius: 4px;
+  padding: 3px 12px;
+}
 
 
 a.gp-top {

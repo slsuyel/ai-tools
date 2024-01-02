@@ -13,7 +13,7 @@ const CroperPage = () => {
     const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
     const [croppedImage, setCroppedImage] = useState(null);
     const [showModal, setShowModal] = useState(false);
-
+    const [aspectRatio, setAspectRatio] = useState(4 / 3);
     const [upImg, setUpImg] = useState(null);
 
     const handleChange = (event) => {
@@ -27,6 +27,15 @@ const CroperPage = () => {
         ? URL.createObjectURL(upImg)
         : '';
 
+    const aspectRatioOptions = [
+        { value: 4 / 3, label: '4/3' },
+        { value: 16 / 9, label: '16 / 9' },
+        { value: 1 / 1, label: 'Square' },
+        { value: 3 / 2, label: '3:2' },
+        { value: 5 / 4, label: '5/4' },
+        { value: 2 / 1, label: '2:1' },
+
+    ];
 
 
     const onCropComplete = (croppedArea, croppedAreaPixels) => {
@@ -55,6 +64,9 @@ const CroperPage = () => {
         // Trigger the file input click
         document.getElementById('formFileLg').click();
     };
+
+
+
     return (
         <div className='bg-white'>
             <h1 className='mt-4 text-center w-100'>Resize Your Image </h1>
@@ -93,15 +105,32 @@ const CroperPage = () => {
                     crop={crop}
                     rotation={rotation}
                     zoom={zoom}
-                    aspect={4 / 3}
+                    aspect={aspectRatio}
                     onCropChange={setCrop}
                     onRotationChange={setRotation}
                     onCropComplete={onCropComplete}
                     onZoomChange={setZoom}
+
                 />
 
-                <div className='row w-100 text-blue my-3'>
 
+                <div className='row w-100 mx-auto'>
+                    <div className='col-md-2'>
+                        <label className='text-blue' htmlFor="">Select setAspect Ratio</label>
+                        <select className='form-select' value={aspectRatio} onChange={(e) => setAspectRatio(parseFloat(e.target.value))}>
+                            {aspectRatioOptions.map((option) => (
+                                <option key={option.value} value={option.value}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                </div>
+
+
+
+                <div className='row mx-auto w-100 text-blue my-3'>
                     <div className='col-md-6'><div className='align-items-center bg-secondary-subtle d-flex gap-3 p-2 rounded'>
 
                         <h6 className=' mb-0'>Zoom </h6>
@@ -142,7 +171,7 @@ const CroperPage = () => {
                         <Modal.Title>Cropped Image</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {croppedImage && <img src={croppedImage} className='img-fluid' alt="Cropped" />}
+                        {croppedImage && <img src={croppedImage} className=' img-fluid' alt="Cropped" />}
                     </Modal.Body>
                     <ModalFooter>
                         <a className='align-items-center gap-1 submit-btn ' href={croppedImage && croppedImage} download ><i className="fa-solid fa-download"></i> Download Image</a>

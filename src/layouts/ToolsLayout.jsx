@@ -9,6 +9,7 @@ import GPACalculator from '../pages/Category/CalculatorTools/GPACalculator';
 import CurrencyConverter from '../pages/Category/FinanceTools/CurrencyConverter';
 import BkashCashOutCharge from '../pages/Category/FinanceTools/BkashCashOutCharge';
 import NagadCal from './../pages/Category/FinanceTools/NagadCal';
+import CodeFormatter from '../pages/Category/CodingTools/CodeFormatter/CodeFormatter';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -35,7 +36,9 @@ const ToolsLayout = () => {
                                             <BkashCashOutCharge /> :
                                             path == 'nagad-cash-out-charge' ?
                                                 <NagadCal /> :
-                                                <NotFound />
+                                                path == 'code-formatter' ?
+                                                    <CodeFormatter /> :
+                                                    <NotFound />
                 }
             </div>
             <div className='col-md-4'>

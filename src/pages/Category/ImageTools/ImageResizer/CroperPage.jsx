@@ -4,8 +4,7 @@ import getCroppedImg from './cropImage';
 import { Modal } from 'react-bootstrap';
 import { ModalFooter } from 'reactstrap';
 
-const dogImg =
-    'https://img.huffingtonpost.com/asset/5ab4d4ac2000007d06eb2c56.jpeg?cache=sih0jwle4e&ops=1910_1000';
+
 
 const CroperPage = () => {
     const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -14,6 +13,21 @@ const CroperPage = () => {
     const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
     const [croppedImage, setCroppedImage] = useState(null);
     const [showModal, setShowModal] = useState(false);
+
+    const [upImg, setUpImg] = useState(null);
+
+    const handleChange = (event) => {
+        const { type } = event.target;
+        const newValue = type === 'file' ? event.target.files[0] : event.target.value;
+
+        setUpImg(newValue);
+    };
+
+    const dogImg = upImg
+        ? URL.createObjectURL(upImg)
+        : 'https://img.huffingtonpost.com/asset/5ab4d4ac2000007d06eb2c56.jpeg?cache=sih0jwle4e&ops=1910_1000';
+
+
 
     const onCropComplete = (croppedArea, croppedAreaPixels) => {
         setCroppedAreaPixels(croppedAreaPixels);
@@ -42,6 +56,12 @@ const CroperPage = () => {
         <div className='bg-white'>
             <h1 className='my-4 text-center w-100'>Resize Your Image </h1>
             <div className='col-md-10 mx-auto mt-3'>
+
+                <div>
+                    <input name="upImg" onChange={handleChange} className="form-control form-control-lg" id="formFileLg" type="file" />
+
+                </div>
+
                 <Cropper
                     image={dogImg}
                     crop={crop}
@@ -63,7 +83,7 @@ const CroperPage = () => {
                             value={zoom}
                             min={1}
                             max={3}
-                            step={0.1}
+                            step={0.09}
                             aria-level={'Zoom'}
                             onChange={(e) => setZoom(e.target.value)}
                             type="range"
@@ -99,7 +119,7 @@ const CroperPage = () => {
                         {croppedImage && <img src={croppedImage} className='img-fluid' alt="Cropped" />}
                     </Modal.Body>
                     <ModalFooter>
-                        <a href={croppedImage && croppedImage} download >Download</a>
+                        <a className='align-items-center gap-1 submit-btn ' href={croppedImage && croppedImage} download ><i className="fa-solid fa-download"></i> Download Image</a>
                     </ModalFooter>
                 </Modal>
             </div>

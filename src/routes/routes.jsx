@@ -8,7 +8,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import NotFound from "../components/NotFound";
 import OnlineCodeEditor from "../pages/Category/CodingTools/OnlineCodeEditor";
 import CodeFormatter from "../pages/Category/CodingTools/CodeFormatter/CodeFormatter";
-import ImageResizer from "../pages/Category/ImageTools/ImageResizer/ImageResizer";
+
 import CroperPage from "../pages/Category/ImageTools/ImageResizer/CroperPage";
 export const router = createBrowserRouter([
     {

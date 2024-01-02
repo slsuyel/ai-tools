@@ -4,7 +4,7 @@ import getCroppedImg from './cropImage';
 import { Modal } from 'react-bootstrap';
 import { ModalFooter } from 'reactstrap';
 
-
+import '../ImageTools.css'
 
 const CroperPage = () => {
     const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -25,7 +25,7 @@ const CroperPage = () => {
 
     const dogImg = upImg
         ? URL.createObjectURL(upImg)
-        : 'https://img.huffingtonpost.com/asset/5ab4d4ac2000007d06eb2c56.jpeg?cache=sih0jwle4e&ops=1910_1000';
+        : '';
 
 
 
@@ -51,16 +51,42 @@ const CroperPage = () => {
     const handleClose = () => {
         setShowModal(false);
     };
-
+    const handleButtonClick = () => {
+        // Trigger the file input click
+        document.getElementById('formFileLg').click();
+    };
     return (
         <div className='bg-white'>
-            <h1 className='my-4 text-center w-100'>Resize Your Image </h1>
+            <h1 className='mt-4 text-center w-100'>Resize Your Image </h1>
+            <h3 className='mb-5 text-center w-100'>Easily resize images online for free.</h3>
             <div className='col-md-10 mx-auto mt-3'>
 
-                <div>
-                    <input name="upImg" onChange={handleChange} className="form-control form-control-lg" id="formFileLg" type="file" />
 
+
+
+
+                <div className={`${upImg ? 'd-none' : ''}`}>
+                    <div className="">
+                        <div className="drop_box mx-auto w-75">
+
+                            <i className="fs-1 fa-solid fa-image"></i>
+
+                            <p>Files Supported: JPG, JPEG, PNG, </p>
+                            <input
+                                name="upImg" onChange={handleChange}
+                                type="file"
+                                hidden=""
+                                accept=".jpg, .jpeg, .png, "
+                                id="formFileLg"
+                                style={{ display: "none" }}
+                            />
+                            <button onClick={handleButtonClick} className="bg-gradient-gray btn submit-btn text-bg-danger">Choose Image</button>
+                        </div>
+                    </div>
                 </div>
+
+
+
 
                 <Cropper
                     image={dogImg}

@@ -11,6 +11,7 @@ import CodeFormatter from "../pages/Category/CodingTools/CodeFormatter/CodeForma
 
 import CroperPage from "../pages/Category/ImageTools/ImageResizer/CroperPage";
 import BackgroundRemover from "../pages/Category/ImageTools/BackgroundRemover/BackgroundRemover";
+import ImageCompression from "../pages/Category/ImageTools/ImageCompression/ImageCompression";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
             {
                 path: "/image-tools/background-remover",
                 element: <BackgroundRemover />,
+            },
+            {
+                path: "/image-tools/image-compressor",
+                element: <ImageCompression />,
             },
 
         ],

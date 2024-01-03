@@ -90,7 +90,7 @@ export default function BackgroundRemover() {
                                     <a
                                         className='text-decoration-none'
                                         href={bgRemove}
-                                        download={'save.png'}
+                                        download={'tool-master-ai.png'}
                                     >
 
                                         <i className="fa-solid fa-download text-danger"></i>   Download

@@ -50,9 +50,9 @@ export default function BackgroundRemover() {
 
 
     return (
-        <div className=''>
+        <div className='bg-gradient'>
 
-            <h1 className='text-white mt-4 text-center w-100'>Remove Image Background</h1>
+            <h1 className='text-white pt-4 text-center w-100'>Remove Image Background</h1>
             <h3 className='text-white mb-5 text-center w-100'>Easily Remove Background From Image online for free.</h3>
 
 
@@ -60,20 +60,10 @@ export default function BackgroundRemover() {
                 <div className=''>
                     {/* Input */}
                     <div className='input'>
-                        {/* Input Tag */}
-                        {/*  <div className='input border border-gray-700 px-2 py-2 rounded-lg bg-gray-950 mb-5'>
-                            <input
-                                type='file'
-                                onChange={(e) => setImage(e.target.files[0])}
-                                className='form-control text-sm text-gray-500'
-                            />
-                        </div> */}
-
-
                         <div className="">
-                            <div className="drop_box mx-auto w-75">
+                            <div className="drop_box mx-auto col-md-4">
 
-                                <i className="fs-1 fa-solid fa-image"></i>
+                                <i className="fs-1 fa-solid fa-image text-white"></i>
 
                                 <p>Files Supported: JPG, JPEG, PNG, </p>
                                 <input
@@ -88,9 +78,6 @@ export default function BackgroundRemover() {
                             </div>
                         </div>
 
-
-
-                        {/* Remove Background Button */}
                         <div className='flex justify-center mb-5'>
                             <button
                                 type='button'
@@ -103,11 +90,13 @@ export default function BackgroundRemover() {
                     </div>
 
                     {/* Output */}
-                    <div className='flex gap-1 mb-5 '>
+                    <div className='flex flex-wrap gap-1 justify-content-around mb-5'>
                         {upImg && (
-                            <div className='border-2 border-gray-500 rounded-l-lg border-dashed flex justify-center p-2 w-40'>
+                            <div className='border border-info-subtle p-3'>
                                 <img
-                                    className='img-fluid'
+                                    className='img-fluid '
+                                    width={400}
+                                    height={'auto'}
                                     src={upImg ? URL.createObjectURL(upImg) : ''}
                                     alt='img'
                                 />
@@ -115,23 +104,26 @@ export default function BackgroundRemover() {
                         )}
 
                         {bgRemove && (
-                            <div className='border-2 border-gray-500 rounded-r-lg border-dashed flex justify-center p-2 w-40'>
-                                <img className='img-fluid' src={bgRemove} alt='img' />
+                            <div className='border border-info-subtle p-3'>
+                                <img className='img-fluid'
+                                    width={400}
+                                    height={'auto'}
+                                    src={bgRemove} alt='img' />
                             </div>
                         )}
                     </div>
 
                     {/* Download button */}
                     {bgRemove && (
-                        <div className='flex justify-center'>
+                        <div className=' flex justify-center submit-btn mb-3'>
                             <a
-                                className='w-full'
+                                className='text-decoration-none'
                                 href={bgRemove}
                                 download={'save.png'}
                             >
-                                <button className='btn btn-dark'>
-                                    Download
-                                </button>
+
+                                Download
+
                             </a>
                         </div>
                     )}

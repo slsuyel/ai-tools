@@ -68,9 +68,9 @@ const CroperPage = () => {
 
 
     return (
-        <div className='bg-white'>
-            <h1 className='mt-4 text-center w-100'>Resize Your Image </h1>
-            <h3 className='mb-5 text-center w-100'>Easily resize images online for free.</h3>
+        <div className='bg-gradient'>
+            <h1 className='pt-4 text-center w-100 text-white'>Resize Your Image </h1>
+            <h3 className='mb-5 text-center w-100 text-white'>Easily resize images online for free.</h3>
             <div className='col-md-10 mx-auto mt-3'>
 
 
@@ -81,7 +81,7 @@ const CroperPage = () => {
                     <div className="">
                         <div className="drop_box mx-auto w-75">
 
-                            <i className="fs-1 fa-solid fa-image"></i>
+                            <i className="fs-1 fa-solid fa-image text-white"></i>
 
                             <p>Files Supported: JPG, JPEG, PNG, </p>
                             <input

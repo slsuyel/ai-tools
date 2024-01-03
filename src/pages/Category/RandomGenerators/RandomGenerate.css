@@ -1,0 +1,8 @@
+.label-reload {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}

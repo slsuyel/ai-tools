@@ -214,8 +214,8 @@
         ]
     },
     {
-        "category": "Random Generators",
-        "slug": "random-generators",
+        "category": "Generators",
+        "slug": "generators",
         "tools": [
             {
                 "name": "Random Password Generator",

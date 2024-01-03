@@ -11,6 +11,7 @@ import BkashCashOutCharge from '../pages/Category/FinanceTools/BkashCashOutCharg
 import NagadCal from './../pages/Category/FinanceTools/NagadCal';
 import UrlShortener from '../pages/Category/UtilityTools/UrlShortner/UrlShortner';
 import QRCodeGenerator from '../pages/Category/UtilityTools/UrlShortner/QRCodeGenerator/QRCodeGenerator';
+import RrandomPasswordGenerator from '../pages/Category/RandomGenerators/RrandomPasswordGenerator/RrandomPasswordGenerator';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -41,9 +42,11 @@ const ToolsLayout = () => {
                                                     <UrlShortener /> :
                                                     path == 'qr-code-generator' ?
                                                         <QRCodeGenerator /> :
+                                                        path == 'random-password-generator' ?
+                                                            <RrandomPasswordGenerator /> :
 
 
-                                                        <NotFound />
+                                                            <NotFound />
                 }
             </div>
             <div className='col-md-4'>

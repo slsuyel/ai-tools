@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 
 export default function BackgroundRemover() {
-    // const [image, setImage] = useState(null);
     const [bgRemove, setBgRemove] = useState(null);
-
     const [upImg, setUpImg] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (event) => {
         const { type } = event.target;
         const newValue = type === 'file' ? event.target.files[0] : event.target.value;
-
         setUpImg(newValue);
     };
 
-
     const handleRemoveBackground = async () => {
+        setLoading(true);
         const apiKey = '5PH3XUqpCr2DMxXoBfwpnNaN';
         const apiUrl = 'https://api.remove.bg/v1.0/removebg';
 
@@ -34,21 +32,20 @@ export default function BackgroundRemover() {
             const data = await res.blob();
 
             const reader = new FileReader();
-            reader.onloadend = () => setBgRemove(reader.result);
+            reader.onloadend = () => {
+                setBgRemove(reader.result);
+                setLoading(false); // Set loading to false once background removal is complete
+            };
             reader.readAsDataURL(data);
         } catch (error) {
             console.log(error);
+            setLoading(false); // Set loading to false in case of an error
         }
     };
 
     const handleButtonClick = () => {
-        // Trigger the file input click
         document.getElementById('formFileLg').click();
     };
-
-
-
-
     return (
         <div className='bg-gradient'>
 
@@ -82,10 +79,27 @@ export default function BackgroundRemover() {
                             <button
                                 type='button'
                                 onClick={handleRemoveBackground}
-                                className='btn btn-primary'
+                                className={`${bgRemove ? 'd-none' : 'submit-btn '}`}
+                                disabled={loading}
                             >
-                                Remove Background
+                                <i className="fa-solid fa-eraser me-1"></i>  {loading ? 'Removing Background...' : 'Remove Background'}
                             </button>
+
+                            {bgRemove && (
+                                <div className=' flex justify-center submit-btn mb-3'>
+                                    <a
+                                        className='text-decoration-none'
+                                        href={bgRemove}
+                                        download={'save.png'}
+                                    >
+
+                                        <i className="fa-solid fa-download text-danger"></i>   Download
+
+                                    </a>
+                                </div>
+                            )}
+
+
                         </div>
                     </div>
 
@@ -114,19 +128,7 @@ export default function BackgroundRemover() {
                     </div>
 
                     {/* Download button */}
-                    {bgRemove && (
-                        <div className=' flex justify-center submit-btn mb-3'>
-                            <a
-                                className='text-decoration-none'
-                                href={bgRemove}
-                                download={'save.png'}
-                            >
 
-                                Download
-
-                            </a>
-                        </div>
-                    )}
                 </div>
             </div>
         </div>

@@ -48,6 +48,28 @@
         ]
     },
     {
+        "category": "Image Tools",
+        "slug": "image-tools",
+        "tools": [
+            {
+                "name": "Image Compressor",
+                "slug": "image-compressor"
+            },
+            {
+                "name": "Image Resizer",
+                "slug": "image-resizer"
+            },
+            {
+                "name": "Remove Background",
+                "slug": "background-remover"
+            },
+            {
+                "name": "Color Palette Generator",
+                "slug": "color-palette-generator"
+            }
+        ]
+    },
+    {
         "category": "Coding Tools",
         "slug": "coding-tools",
         "tools": [
@@ -154,28 +176,6 @@
             {
                 "name": "Water Intake Tracker",
                 "slug": "water-intake-tracker"
-            }
-        ]
-    },
-    {
-        "category": "Image Tools",
-        "slug": "image-tools",
-        "tools": [
-            {
-                "name": "Image Compressor",
-                "slug": "image-compressor"
-            },
-            {
-                "name": "Image Resizer",
-                "slug": "image-resizer"
-            },
-            {
-                "name": "Background Remover",
-                "slug": "background-remover"
-            },
-            {
-                "name": "Color Palette Generator",
-                "slug": "color-palette-generator"
             }
         ]
     },

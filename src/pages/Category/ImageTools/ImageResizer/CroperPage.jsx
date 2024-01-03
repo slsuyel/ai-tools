@@ -117,7 +117,7 @@ const CroperPage = () => {
 
                 <div className='row w-100 mx-auto'>
                     <div className='col-md-2'>
-                        <label className='text-blue' htmlFor="">Select setAspect Ratio</label>
+                        <label className='text-blue' htmlFor="">Select Aspect Ratio</label>
                         <select className='form-select' value={aspectRatio} onChange={(e) => setAspectRatio(parseFloat(e.target.value))}>
                             {aspectRatioOptions.map((option) => (
                                 <option key={option.value} value={option.value}>
@@ -132,7 +132,7 @@ const CroperPage = () => {
 
 
                 <div className='row mx-auto w-100 text-blue my-3'>
-                    <div className='col-md-6'><div className='align-items-center bg-secondary-subtle d-flex gap-3 p-2 rounded'>
+                    <div className='col-md-6 my-1'><div className='align-items-center bg-secondary-subtle d-flex gap-3 p-2 rounded'>
 
                         <h6 className=' mb-0'>Zoom </h6>
                         <input
@@ -147,20 +147,22 @@ const CroperPage = () => {
                             id="zoom"
                         />
                     </div></div>
-                    <div className='col-md-6'>  <div className='align-items-center bg-secondary-subtle d-flex gap-3 p-2 rounded'>
-                        <h6 className=' mb-0'>Rotate </h6>
-                        <input
-                            value={rotation}
-                            min={0}
-                            max={360}
-                            step={1}
-                            aria-labelledby="Rotation"
-                            onChange={(e) => setRotation(e.target.value)}
-                            type="range"
-                            className="form-range"
-                            id="rotation"
-                        />
-                    </div></div>
+                    <div className='col-md-6 my-1'>
+                        <div className='align-items-center bg-secondary-subtle d-flex gap-3 p-2 rounded'>
+                            <h6 className=' mb-0'>Rotate </h6>
+                            <input
+                                value={rotation}
+                                min={0}
+                                max={360}
+                                step={1}
+                                aria-labelledby="Rotation"
+                                onChange={(e) => setRotation(e.target.value)}
+                                type="range"
+                                className="form-range"
+                                id="rotation"
+                            />
+                        </div>
+                    </div>
 
                     <div>
                         <button className='submit-btn mx-auto mb-4 mt-2' onClick={showCroppedImage}>Show Result</button></div>

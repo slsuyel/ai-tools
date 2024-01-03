@@ -34,7 +34,7 @@ const Header = () => {
                             <img
                                 src={logo}
                                 alt=""
-                                width={'200px'}
+                                width={'150px'}
                                 draggable={false}
                             />
                         </Link>

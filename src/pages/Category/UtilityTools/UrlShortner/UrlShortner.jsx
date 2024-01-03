@@ -52,46 +52,69 @@ function UrlShortener() {
     }
 
     return (
-        <div className="shortener-container">
-            <h2>A Simple Bitly Link Shortener</h2>
+        <div className="col-md-8 mx-auto">
+            <h2 className="text-light">A Simple Bitly Link Shortener</h2>
             <div>
-                <form method="post" action="" onSubmit={handleSubmit}>
-                    <input
-                        name="long_url"
-                        type="text"
-                        value={longURL}
-                        placeholder="Paste your url"
-                        onChange={handleChange}
-                    />
-                    <button type="submit"><img src="https://raw.githubusercontent.com/amissah17/linkshortener/main/src/icons/send.png" alt="send icon" id="send_icon" /></button>
-
+                <form className="mt-3" method="post" action="" onSubmit={handleSubmit}>
+                    <div className="align-items-center bg-white input-group rounded">
+                        <input
+                            required
+                            name="long_url"
+                            type="text"
+                            value={longURL}
+                            className="form-control"
+                            placeholder="Paste your url"
+                            onChange={handleChange}
+                        />
+                        <div className="input-group-append">
+                            <button type="submit" className=" go-btn">
+                                <i className="align-items-center d-flex fa-forward fa-solid fs-2 justify-content-center"></i>
+                            </button>
+                        </div>
+                    </div>
                 </form>
-
             </div>
 
             {/* show on success... */}
-
             {active ? (
-                <div className="show_links">
-                    <img src={shortLink.qr_code}
-
+                <div className="bg-gradient d-flex justify-content-evenly py-3 show_links">
+                    <img
+                        src={shortLink.qr_code}
                         width={125}
-                        alt="Qr code" className="qr_img border border-danger" />
-                    <div>
-                        <h3>Here's your short link...</h3>
-                        <span>
-                            <p>{shortLink.link}</p>
-                            <CopyToClipboard onCopy={() => {
-                                setCopy(true);
-                            }} text={shortLink.link}>{!copy ? <img src="https://raw.githubusercontent.com/amissah17/linkshortener/main/src/icons/copy.png" alt="copy icon" width="17px" height="17px" /> : <img src='https://raw.githubusercontent.com/amissah17/linkshortener/main/src/icons/copied.png' alt="copy icon" width="17px" height="17px" />}</CopyToClipboard>
-
-                        </span>
+                        alt="Qr code"
+                        className="qr_img border border-danger"
+                    />
+                    <div className="align-items-center d-flex">
+                        <div>
+                            <h3 className="text-light">Here's your short link...</h3>
+                            <span className="align-items-center d-flex gap-3 text-light">
+                                <p className="border mb-0 px-2 py-1 rounded">{shortLink.link}</p>
+                                <CopyToClipboard
+                                    onCopy={() => {
+                                        setCopy(true);
+                                    }}
+                                    text={shortLink.link}
+                                >
+                                    {!copy ? (
+                                        <i className="fa-solid fa-copy"></i>
+                                    ) : (
+                                        <img
+                                            src="https://raw.githubusercontent.com/amissah17/linkshortener/main/src/icons/copied.png"
+                                            alt="copy icon"
+                                            width="17px"
+                                            height="17px"
+                                        />
+                                    )}
+                                </CopyToClipboard>
+                            </span>
+                        </div>
                     </div>
                 </div>
             ) : (
                 ""
             )}
         </div>
+
     );
 }
 

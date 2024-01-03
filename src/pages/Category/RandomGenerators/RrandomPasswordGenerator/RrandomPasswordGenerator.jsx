@@ -15,15 +15,11 @@ const RrandomPasswordGenerator = () => {
 
     const getSelectedCharSet = () => {
         let charset = '';
+
         if (characterSets.uppercase) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         if (characterSets.lowercase) charset += 'abcdefghijklmnopqrstuvwxyz';
         if (characterSets.numbers) charset += '0123456789';
         if (characterSets.specialCharacters) charset += '!@#$%^&*()-=_+[]{}|;:,.<>?/';
-
-        // If all checkboxes are unchecked, use all available characters
-        if (!characterSets.uppercase && !characterSets.lowercase && !characterSets.numbers && !characterSets.specialCharacters) {
-            charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-=_+[]{}|;:,.<>?/';
-        }
 
         return charset;
     };
@@ -41,19 +37,14 @@ const RrandomPasswordGenerator = () => {
         updateQuality(newPassword);
     };
 
-
-
-
-
     const updateQuality = (newPassword) => {
         const lengthQuality = newPassword.length >= 12 ? 4 : newPassword.length >= 8 ? 3 : 2;
         setQuality(passQuality[lengthQuality]);
     };
 
-
     const copyToClipboard = () => {
         navigator.clipboard.writeText(password);
-        alert('Password Copied')
+        alert('Password Copied');
     };
 
     const handlePasswordLengthChange = (event) => {
@@ -70,11 +61,9 @@ const RrandomPasswordGenerator = () => {
         generatePassword();
     };
 
-
-
     return (
         <div className='fs-5 '>
-            <h1>Rrandom Password Generator</h1>
+            <h1 className='text-center text-white'>Rrandom Password Generator</h1>
             <div className='row w-100 my-1 mx-auto'>
                 <div className='col-md-8 my-1 '>
                     <div className='position-relative'>
@@ -101,7 +90,7 @@ const RrandomPasswordGenerator = () => {
                         type="range"
                         className="form-range  my-1"
                         id="customRange1"
-                        value={passwordLength}
+                        value={passwordLength + 1}
                         min="4"
                         max="50"
                         onChange={handlePasswordLengthChange}
@@ -122,9 +111,8 @@ const RrandomPasswordGenerator = () => {
                             type="checkbox"
                             id="uppercaseCheckbox"
                             checked={characterSets.uppercase}
-                            onChange={(e) => handleCharacterSetChange('uppercase', e.target.checked)}
+                            onChange={() => handleCharacterSetChange('uppercase', !characterSets.uppercase)}
                         />
-
                         <label className="form-check-label" htmlFor="uppercaseCheckbox">
                             ABC
                         </label>
@@ -135,7 +123,7 @@ const RrandomPasswordGenerator = () => {
                             type="checkbox"
                             id="lowercaseCheckbox"
                             checked={characterSets.lowercase}
-                            onChange={(e) => handleCharacterSetChange('lowercase', e.target.checked)}
+                            onChange={() => handleCharacterSetChange('lowercase', !characterSets.lowercase)}
                         />
                         <label className="form-check-label" htmlFor="lowercaseCheckbox">
                             abc
@@ -147,7 +135,7 @@ const RrandomPasswordGenerator = () => {
                             type="checkbox"
                             id="numbersCheckbox"
                             checked={characterSets.numbers}
-                            onChange={(e) => handleCharacterSetChange('numbers', e.target.checked)}
+                            onChange={() => handleCharacterSetChange('numbers', !characterSets.numbers)}
                         />
                         <label className="form-check-label" htmlFor="numbersCheckbox">
                             123
@@ -159,7 +147,7 @@ const RrandomPasswordGenerator = () => {
                             type="checkbox"
                             id="specialCharactersCheckbox"
                             checked={characterSets.specialCharacters}
-                            onChange={(e) => handleCharacterSetChange('specialCharacters', e.target.checked)}
+                            onChange={() => handleCharacterSetChange('specialCharacters', !characterSets.specialCharacters)}
                         />
                         <label className="form-check-label" htmlFor="specialCharactersCheckbox">
                             #$&amp;

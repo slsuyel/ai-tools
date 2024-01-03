@@ -9,6 +9,7 @@ import GPACalculator from '../pages/Category/CalculatorTools/GPACalculator';
 import CurrencyConverter from '../pages/Category/FinanceTools/CurrencyConverter';
 import BkashCashOutCharge from '../pages/Category/FinanceTools/BkashCashOutCharge';
 import NagadCal from './../pages/Category/FinanceTools/NagadCal';
+import UrlShortener from '../pages/Category/UtilityTools/UrlShortner/UrlShortner';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -17,7 +18,7 @@ const ToolsLayout = () => {
         return <Loader />
     }
     return (
-        <div className='row w-100 mx-auto my-5' style={{ paddingBottom: '80px' }} /*  */>
+        <div className='row w-100 mx-auto bg-gradient py-5' style={{ paddingBottom: '80px' }} /*  */>
 
             <div className='col-md-8'>
                 {
@@ -35,7 +36,11 @@ const ToolsLayout = () => {
                                             <BkashCashOutCharge /> :
                                             path == 'nagad-cash-out-charge' ?
                                                 <NagadCal /> :
-                                                <NotFound />
+                                                path == 'url-shortner' ?
+                                                    <UrlShortener /> :
+
+
+                                                    <NotFound />
                 }
             </div>
             <div className='col-md-4'>

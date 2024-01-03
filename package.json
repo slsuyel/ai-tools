@@ -22,6 +22,7 @@
     "react": "^18.3.0-next-fecc288b7-20221025",
     "react-bootstrap": "^2.8.0",
     "react-codemirror2": "^7.3.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-easy-crop": "^5.0.4",
     "react-router-dom": "^6.6.1",

@@ -30,7 +30,7 @@ const PdfToImage = () => {
                     id="formFileLg"
                     style={{ display: "none" }}
                 />
-                <button onClick={handleButtonClick} className="bg-gradient-gray btn submit-btn text-bg-danger">Choose File</button>
+                <button onClick={handleButtonClick} disabled className="bg-gradient-gray btn submit-btn text-bg-danger">Choose File</button>
             </div>
 
             <div className=' flex justify-center submit-btn mb-3'>

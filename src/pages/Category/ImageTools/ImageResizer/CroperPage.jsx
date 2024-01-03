@@ -110,6 +110,7 @@ const CroperPage = () => {
                     onRotationChange={setRotation}
                     onCropComplete={onCropComplete}
                     onZoomChange={setZoom}
+                // cropShape="round"
 
                 />
 

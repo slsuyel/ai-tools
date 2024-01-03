@@ -66,8 +66,12 @@ const RrandomPasswordGenerator = () => {
             <h1 className='text-center text-white'>Rrandom Password Generator</h1>
             <div className='row w-100 my-1 mx-auto'>
                 <div className='col-md-8 my-1 '>
-                    <div className='position-relative'>
-                        <input className='form-control password-view-box' value={password} type="text" disabled />
+                    <div className='position-relative typing-container'>
+                        <input className='form-control typing' value={password} type="text" disabled />
+
+
+
+
                         <div className='label-reload'>
                             <label className='mb-0' htmlFor="">{quality}</label>
                             <i className="fa-rotate-right fa-solid fs-3 me-2" onClick={generatePassword}></i>

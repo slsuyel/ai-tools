@@ -90,6 +90,10 @@
                 "slug": "url-shortner"
             },
             {
+                "name": "QR Code Generator",
+                "slug": "qr-code-generator"
+            },
+            {
                 "name": "Code Snippet Repository",
                 "slug": "code-snippet-repository"
             }
@@ -210,8 +214,8 @@
         ]
     },
     {
-        "category": "Random Generators",
-        "slug": "random-generators",
+        "category": "Generators",
+        "slug": "generators",
         "tools": [
             {
                 "name": "Random Password Generator",

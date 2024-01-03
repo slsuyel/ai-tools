@@ -10,6 +10,7 @@ import OnlineCodeEditor from "../pages/Category/CodingTools/OnlineCodeEditor";
 import CodeFormatter from "../pages/Category/CodingTools/CodeFormatter/CodeFormatter";
 
 import CroperPage from "../pages/Category/ImageTools/ImageResizer/CroperPage";
+import BackgroundRemover from "../pages/Category/ImageTools/BackgroundRemover/BackgroundRemover";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
             {
                 path: "/image-tools/image-resizer",
                 element: <CroperPage />,
+            },
+            {
+                path: "/image-tools/background-remover",
+                element: <BackgroundRemover />,
             },
 
         ],

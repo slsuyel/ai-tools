@@ -10,6 +10,7 @@ import CurrencyConverter from '../pages/Category/FinanceTools/CurrencyConverter'
 import BkashCashOutCharge from '../pages/Category/FinanceTools/BkashCashOutCharge';
 import NagadCal from './../pages/Category/FinanceTools/NagadCal';
 import UrlShortener from '../pages/Category/UtilityTools/UrlShortner/UrlShortner';
+import QRCodeGenerator from '../pages/Category/UtilityTools/UrlShortner/QRCodeGenerator/QRCodeGenerator';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -38,9 +39,11 @@ const ToolsLayout = () => {
                                                 <NagadCal /> :
                                                 path == 'url-shortner' ?
                                                     <UrlShortener /> :
+                                                    path == 'qr-code-generator' ?
+                                                        <QRCodeGenerator /> :
 
 
-                                                    <NotFound />
+                                                        <NotFound />
                 }
             </div>
             <div className='col-md-4'>

@@ -8,13 +8,14 @@ function UrlShortener() {
     const [longURL, setLongUrl] = useState("");
     const [shortLink, setShortLink] = useState({});
     const [active, setActive] = useState(false);
-    const [copy, setCopy] = useState(false);
+    const [copied, setCopied] = useState(false);
 
     function handleChange(e) {
         setLongUrl(e.target.value);
     }
 
     async function handleSubmit(e) {
+        setCopied(!copied)
         e.preventDefault();
         await fetch("https://api-ssl.bitly.com/v4/shorten", {
             method: "POST",
@@ -91,19 +92,14 @@ function UrlShortener() {
                                 <p className="border mb-0 px-2 py-1 rounded">{shortLink.link}</p>
                                 <CopyToClipboard
                                     onCopy={() => {
-                                        setCopy(true);
+                                        setCopied(!copied);
                                     }}
                                     text={shortLink.link}
                                 >
-                                    {!copy ? (
+                                    {!copied ? (
                                         <i className="fa-solid fa-copy"></i>
                                     ) : (
-                                        <img
-                                            src="https://raw.githubusercontent.com/amissah17/linkshortener/main/src/icons/copied.png"
-                                            alt="copy icon"
-                                            width="17px"
-                                            height="17px"
-                                        />
+                                        <span className="text-light">Copied!</span>
                                     )}
                                 </CopyToClipboard>
                             </span>

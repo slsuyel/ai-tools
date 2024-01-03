@@ -13,6 +13,7 @@ import CroperPage from "../pages/Category/ImageTools/ImageResizer/CroperPage";
 import BackgroundRemover from "../pages/Category/ImageTools/BackgroundRemover/BackgroundRemover";
 import ImageCompression from "../pages/Category/ImageTools/ImageCompression/ImageCompression";
 import PdfToImage from "../pages/Category/FileTools/PdfToImage";
+
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -35,6 +36,8 @@ export const router = createBrowserRouter([
                 path: ":category/:tool",
                 element: <ToolsLayout />,
             },
+
+
             {
                 path: "/coding-tools/online-code-editor",
                 element: <OnlineCodeEditor />,

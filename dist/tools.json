@@ -1,0 +1,344 @@
+[
+    {
+        "category": "Calculator Tools",
+        "slug": "calculator-tools",
+        "tools": [
+            {
+                "name": "Calculator",
+                "slug": "calculator"
+            },
+            {
+                "name": "Age Calculator",
+                "slug": "age-calculator"
+            },
+            {
+                "name": "BMI Calculator",
+                "slug": "bmi-calculator"
+            },
+            {
+                "name": "GPA Calculator",
+                "slug": "gpa-calculator"
+            },
+            {
+                "name": "Matrix Algebra Calculator",
+                "slug": "matrix-algebra-calculator"
+            }
+        ]
+    },
+    {
+        "category": "Finance Tools",
+        "slug": "finance-tools",
+        "tools": [
+            {
+                "name": "Currency Converter",
+                "slug": "currency-converter"
+            },
+            {
+                "name": "Bkash Calculator",
+                "slug": "bkash-cash-out-charge"
+            },
+            {
+                "name": "Nagad Calculator",
+                "slug": "nagad-cash-out-charge"
+            },
+            {
+                "name": "Budget Planner",
+                "slug": "budget-planner"
+            }
+        ]
+    },
+    {
+        "category": "Image Tools",
+        "slug": "image-tools",
+        "tools": [
+            {
+                "name": "Image Compressor",
+                "slug": "image-compressor"
+            },
+            {
+                "name": "Image Resizer",
+                "slug": "image-resizer"
+            },
+            {
+                "name": "Remove Background",
+                "slug": "background-remover"
+            },
+            {
+                "name": "Color Palette Generator",
+                "slug": "color-palette-generator"
+            }
+        ]
+    },
+    {
+        "category": "Coding Tools",
+        "slug": "coding-tools",
+        "tools": [
+            {
+                "name": "Online Code Editor",
+                "slug": "online-code-editor"
+            },
+            {
+                "name": "Code Formatter",
+                "slug": "code-formatter"
+            },
+            {
+                "name": "Version Control System",
+                "slug": "version-control-system"
+            },
+            {
+                "name": "URL Shortner",
+                "slug": "url-shortner"
+            },
+            {
+                "name": "Code Snippet Repository",
+                "slug": "code-snippet-repository"
+            }
+        ]
+    },
+    {
+        "category": "Document Converters",
+        "slug": "document-converters",
+        "tools": [
+            {
+                "name": "PDF to Image",
+                "slug": "pdf-to-image"
+            },
+            {
+                "name": "PDF to Word Converter",
+                "slug": "pdf-to-word-converter"
+            },
+            {
+                "name": "Word to PDF Converter",
+                "slug": "word-to-pdf-converter"
+            },
+            {
+                "name": "Image to PDF Converter",
+                "slug": "image-to-pdf-converter"
+            },
+            {
+                "name": "Text to Speech Converter",
+                "slug": "text-to-speech-converter"
+            }
+        ]
+    },
+    {
+        "category": "File Tools",
+        "slug": "file-tools",
+        "tools": [
+            {
+                "name": "File Format Converter",
+                "slug": "file-format-converter"
+            },
+            {
+                "name": "File Splitter",
+                "slug": "file-splitter"
+            },
+            {
+                "name": "File Merger",
+                "slug": "file-merger"
+            },
+            {
+                "name": "Duplicate File Finder",
+                "slug": "duplicate-file-finder"
+            }
+        ]
+    },
+    {
+        "category": "Geometry Tools",
+        "slug": "geometry-tools",
+        "tools": [
+            {
+                "name": "Area and Perimeter Calculator",
+                "slug": "area-perimeter-calculator"
+            },
+            {
+                "name": "Triangle Solver",
+                "slug": "triangle-solver"
+            },
+            {
+                "name": "Circle Properties Calculator",
+                "slug": "circle-properties-calculator"
+            },
+            {
+                "name": "3D Shape Volume Calculator",
+                "slug": "3d-shape-volume-calculator"
+            }
+        ]
+    },
+    {
+        "category": "Health Tools",
+        "slug": "health-tools",
+        "tools": [
+            {
+                "name": "BMI Calculator",
+                "slug": "bmi-calculator"
+            },
+            {
+                "name": "Calorie Counter",
+                "slug": "calorie-counter"
+            },
+            {
+                "name": "Sleep Pattern Analyzer",
+                "slug": "sleep-pattern-analyzer"
+            },
+            {
+                "name": "Water Intake Tracker",
+                "slug": "water-intake-tracker"
+            }
+        ]
+    },
+    {
+        "category": "Language Tools",
+        "slug": "language-tools",
+        "tools": [
+            {
+                "name": "Language Translation Tool",
+                "slug": "language-translation-tool"
+            },
+            {
+                "name": "Grammar and Spell Checker",
+                "slug": "grammar-spell-checker"
+            },
+            {
+                "name": "Text Summarizer",
+                "slug": "text-summarizer"
+            },
+            {
+                "name": "Language Learning Assistant",
+                "slug": "language-learning-assistant"
+            }
+        ]
+    },
+    {
+        "category": "Random Generators",
+        "slug": "random-generators",
+        "tools": [
+            {
+                "name": "Random Password Generator",
+                "slug": "random-password-generator"
+            },
+            {
+                "name": "Name Generator",
+                "slug": "name-generator"
+            },
+            {
+                "name": "Random Number Generator",
+                "slug": "random-number-generator"
+            },
+            {
+                "name": "Idea Generator",
+                "slug": "idea-generator"
+            }
+        ]
+    },
+    {
+        "category": "Relationship Tools",
+        "slug": "relationship-tools",
+        "tools": [
+            {
+                "name": "Date Night Planner",
+                "slug": "date-night-planner"
+            },
+            {
+                "name": "Relationship Milestone Tracker",
+                "slug": "relationship-milestone-tracker"
+            },
+            {
+                "name": "Love Letter Generator",
+                "slug": "love-letter-generator"
+            },
+            {
+                "name": "Conflict Resolution Guide",
+                "slug": "conflict-resolution-guide"
+            }
+        ]
+    },
+    {
+        "category": "Social Media Tools",
+        "slug": "social-media-tools",
+        "tools": [
+            {
+                "name": "Social Media Post Scheduler",
+                "slug": "social-media-post-scheduler"
+            },
+            {
+                "name": "Hashtag Generator",
+                "slug": "hashtag-generator"
+            },
+            {
+                "name": "Profile Picture Editor",
+                "slug": "profile-picture-editor"
+            },
+            {
+                "name": "Caption Inspiration Generator",
+                "slug": "caption-inspiration-generator"
+            }
+        ]
+    },
+    {
+        "category": "Tech & Gadgets Tools",
+        "slug": "tech-and-gadgets-tools",
+        "tools": [
+            {
+                "name": "IP Address Locator",
+                "slug": "ip-address-locator"
+            },
+            {
+                "name": "Device Compatibility Checker",
+                "slug": "device-compatibility-checker"
+            },
+            {
+                "name": "Internet Speed Test",
+                "slug": "internet-speed-test"
+            },
+            {
+                "name": "QR Code Scanner",
+                "slug": "qr-code-scanner"
+            }
+        ]
+    },
+    {
+        "category": "Time & Date Tools",
+        "slug": "time-and-date-tools",
+        "tools": [
+            {
+                "name": "Time Zone Converter",
+                "slug": "time-zone-converter"
+            },
+            {
+                "name": "Date Calculator",
+                "slug": "date-calculator"
+            },
+            {
+                "name": "Countdown Timer",
+                "slug": "countdown-timer"
+            },
+            {
+                "name": "World Clock",
+                "slug": "world-clock"
+            }
+        ]
+    },
+    {
+        "category": "Utility Tools",
+        "slug": "utility-tools",
+        "tools": [
+            {
+                "name": "Unit Converter",
+                "slug": "unit-converter"
+            },
+            {
+                "name": "IP Address Converter",
+                "slug": "ip-address-converter"
+            },
+            {
+                "name": "Regular Expression Tester",
+                "slug": "regex-tester"
+            },
+            {
+                "name": "Color Contrast Checker",
+                "slug": "color-contrast-checker"
+            }
+        ]
+    }
+]

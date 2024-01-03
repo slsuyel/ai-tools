@@ -83,8 +83,8 @@ export default class ImageCompression extends React.Component {
         return (
 
             <div className='bg-gradient'>
-                <h1 className='text-white pt-4 text-center w-100'>Remove Image Background</h1>
-                <h3 className='text-white mb-5 text-center w-100'>Easily Remove Background From Image online for free.</h3>
+                <h1 className='text-white pt-4 text-center w-100'>Image Compressor</h1>
+                <h3 className='text-white mb-5 text-center w-100'>Easily Image Compressor online free.</h3>
                 <div className='col-md-10 mx-auto'>
                     <div>
                         <h1 className='text-white'>  Options:</h1>
@@ -180,7 +180,7 @@ export default class ImageCompression extends React.Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr className='d-flex justify-content-between gap-1'>
                                     <td><img className='img-fluid img-thumbnail' src={mainThread.inputUrl || webWorker.inputUrl} alt="input" /></td>
                                     <td>
                                         <img className='img-fluid img-thumbnail' src={mainThread.outputUrl || webWorker.outputUrl} alt="output" />

@@ -96,6 +96,10 @@
         "slug": "document-converters",
         "tools": [
             {
+                "name": "PDF to Image",
+                "slug": "pdf-to-image"
+            },
+            {
                 "name": "PDF to Word Converter",
                 "slug": "pdf-to-word-converter"
             },

@@ -26,6 +26,11 @@ const Header = () => {
             link: '/'
         },
         {
+            id: 5,
+            label: 'Chat',
+            link: '/chat'
+        },
+        {
             id: 2,
             label: 'Blog',
             link: '/blog'

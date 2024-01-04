@@ -116,3 +116,10 @@ code {
 .nav-bg-clr.d-block.d-sm-none.fixed-top.text-end {
   background: linear-gradient(172deg, #090851, #3a28da);
 }
+
+.chatBoat {
+  position: absolute;
+  top: -44px;
+  right: 21px;
+  color: white;
+}

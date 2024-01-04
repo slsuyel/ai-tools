@@ -72,9 +72,13 @@ const Header = () => {
                         ))}
 
                         <div className='my-auto'> <button
-                            className='bg-gradient-orange border-0 rounded text-white'
+                            className={`${chatOpen ? 'bg-dark' : 'bg-gradient-orange '}  border-0 rounded text-white`}
 
-                            onClick={handleChatBtn}><i className="fa-regular fa-comment"></i> Chat</button></div>
+                            onClick={handleChatBtn}><i className="fa-regular fa-comment me-1"></i>
+                            {`${chatOpen ? 'Chatting' : 'Chat'}`}
+
+
+                        </button></div>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import useCurrencyInfo from '../../../hooks/useCurrencyInfo';
 import InputBox from './InputBox';
+import Breadcrumb from '../../../components/Breadcrumb';
 
 const CurrencyConverter = () => {
     const [amount, setAmount] = useState(0);
@@ -24,6 +25,9 @@ const CurrencyConverter = () => {
 
     return (
         <div className="">
+
+            <Breadcrumb title={'currency-converter'} description={'Convert currency online '} />
+
             <div className=" mx-auto border  rounded-lg p-5 ">
                 <form
                     onSubmit={(e) => {

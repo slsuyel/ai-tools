@@ -5,6 +5,7 @@ import { Modal } from 'react-bootstrap';
 import { ModalFooter } from 'reactstrap';
 
 import '../ImageTools.css'
+import Breadcrumb from '../../../../components/Breadcrumb';
 
 const CroperPage = () => {
     const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -69,8 +70,13 @@ const CroperPage = () => {
 
     return (
         <div className='bg-gradient'>
-            <h1 className='pt-4 text-center w-100 text-white'>Resize Your Image </h1>
-            <h3 className='mb-5 text-center w-100 text-white'>Easily resize images online for free.</h3>
+
+            <div className='py-3'>
+                <Breadcrumb title={'Resize Image'} description={'Easily resize images online for free'} />
+            </div>
+
+
+
             <div className='col-md-10 mx-auto mt-3'>
 
 

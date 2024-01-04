@@ -1,6 +1,7 @@
 import React from 'react'
 
 import imageCompression from 'browser-image-compression'
+import Breadcrumb from '../../../../components/Breadcrumb'
 
 export default class ImageCompression extends React.Component {
     constructor(...args) {
@@ -83,8 +84,11 @@ export default class ImageCompression extends React.Component {
         return (
 
             <div className='bg-gradient'>
-                <h1 className='text-white pt-4 text-center w-100'>Image Compressor</h1>
-                <h3 className='text-white mb-5 text-center w-100'>Easily Image Compressor online free.</h3>
+                <div className='py-3'>
+                    <Breadcrumb title={'Image Compressor'} description={'Easily Image Compressor online free.'} />
+                </div>
+
+
                 <div className='col-md-10 mx-auto'>
                     <div>
                         <h1 className='text-white'>  Options:</h1>

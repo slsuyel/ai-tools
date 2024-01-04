@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Breadcrumb from '../../../components/Breadcrumb';
 
 const GPACalculator = () => {
     const [subjects, setSubjects] = useState([{ name: '', marks: '', totalMarks: '', grade: '', gradePoints: '' }]);
@@ -67,7 +68,12 @@ const GPACalculator = () => {
     };
 
     return (
-        <div className="container col-md-6">
+        <div className="">
+
+
+            <Breadcrumb title={'GPA-calculator'} description={'Your Best online Grade Calculator'} />
+
+
             <h1 className="text-center text-white mb-4">Grade Calculator</h1>
             {finalResult && (
                 <div className="d-flex text-white gap-3">

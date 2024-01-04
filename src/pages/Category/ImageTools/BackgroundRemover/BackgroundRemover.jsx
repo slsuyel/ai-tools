@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Breadcrumb from '../../../../components/Breadcrumb';
 
 export default function BackgroundRemover() {
     const [bgRemove, setBgRemove] = useState(null);
@@ -49,7 +50,10 @@ export default function BackgroundRemover() {
     return (
         <div className='bg-gradient'>
 
-            <h1 className='text-white pt-4 text-center w-100'>Remove Image Background</h1>
+            <div className='pt-3'>
+                <Breadcrumb title={'Remove Image Background'} description={''} />
+            </div>
+
             <h3 className='text-white mb-5 text-center w-100'>Easily Remove Background From Image online for free.</h3>
 
 
@@ -79,14 +83,14 @@ export default function BackgroundRemover() {
                             <button
                                 type='button'
                                 onClick={handleRemoveBackground}
-                                className={`${bgRemove ? 'd-none' : 'submit-btn '}`}
+                                className={`${'submit-btn '}`}
                                 disabled={loading}
                             >
                                 <i className="fa-solid fa-eraser me-1"></i>  {loading ? 'Removing Background...' : 'Remove Background'}
                             </button>
 
                             {bgRemove && (
-                                <div className=' flex justify-center submit-btn mb-3'>
+                                <div className='ms-3 flex justify-center submit-btn mb-3'>
                                     <a
                                         className='text-decoration-none'
                                         href={bgRemove}

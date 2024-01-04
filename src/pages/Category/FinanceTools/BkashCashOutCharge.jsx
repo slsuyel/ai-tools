@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
+import Breadcrumb from '../../../components/Breadcrumb';
 
 const BkashCashOutCharge = () => {
     const [amount, setAmount] = useState('');
@@ -30,7 +31,10 @@ const BkashCashOutCharge = () => {
 
     // console.log(totalWithCharge);
     return (
-        <div className="container">
+        <div className="w-100 ">
+
+            <Breadcrumb title={'bkash-calculator'} description={''} />
+
             <h1 className="text-center text-white mb-4">Calculate Bkash Cash Out Charge Rate: 2023</h1>
 
             <div className='col-md-8 mx-auto'>

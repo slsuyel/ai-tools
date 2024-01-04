@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Breadcrumb from '../../../components/Breadcrumb';
 
 const NagadCal = () => {
     const [amount, setAmount] = useState('');
@@ -27,6 +28,8 @@ const NagadCal = () => {
     };
     return (
         <div className="container w-100 mx-auto">
+
+            <Breadcrumb title={'nagad-calculator'} description={''} />
             <h1 className="text-center text-white mb-4">Calculate Nagad Cash Out Charge Rate: 2023</h1>
             <div className='col-md-8 mx-auto'>
 
@@ -39,7 +42,7 @@ const NagadCal = () => {
                             value={chargeType}
                             onChange={(e) => setChargeType(e.target.value)}
                         >
-                            <option value="app">Cash Out App</option>
+                            <option value="app">Cash Out Nagad App</option>
                             <option value="priyo">Nagad Islamic(App)/Cash Out(*167#)</option>
                         </select>
                     </div>

@@ -1,20 +1,26 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
-
-const Breadcrumb = ({ route }) => {
+import './components.css'
+const Breadcrumb = ({ title, description }) => {
     return (
-        <div className="row mb-2">
-            <div className="col-sm-6">
-              
-            </div>
-            <div className="col-sm-6">
-                <ol className="breadcrumb float-sm-right">
+        <div className="align-items-center mb-2 mb-5 mx-auto row text-center w-100">
+            <nav className='col-md-4' aria-label="breadcrumb">
+                <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                        <Link to="/">Home</Link>
+                        <Link className='fs-4 title-color text-decoration-underline' to="/"><i className="fa-solid fa-house fa-fw me-1"></i></Link>
                     </li>
-                    <li className="breadcrumb-item active">{route}</li>
+
+                    <li className="breadcrumb-item active fs-4 title-color" aria-current="page">
+                        {title}
+                    </li>
                 </ol>
+            </nav>
+
+            <div className='col-md-8'>
+                <h1 className=' title-color'> {description}</h1>
+
             </div>
+
         </div>
     );
 };

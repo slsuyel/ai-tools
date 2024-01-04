@@ -8,7 +8,7 @@ function UrlShortener() {
     const [longURL, setLongUrl] = useState("");
     const [shortLink, setShortLink] = useState({});
     const [active, setActive] = useState(false);
-    const [copied, setCopied] = useState(false);
+    const [copied, setCopied] = useState(true);
 
     function handleChange(e) {
         setLongUrl(e.target.value);

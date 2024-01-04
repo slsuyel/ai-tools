@@ -1,3 +1,13 @@
-.active {
+/* .active {
     border-bottom: 2px solid #9b9393;
+} */
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: rgb(255, 255, 255) !important;
+}
+
+.title-color {
+    background: linear-gradient(to right, #CF5F15 3%, #FF4DED 50%, #40c1ff 67%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

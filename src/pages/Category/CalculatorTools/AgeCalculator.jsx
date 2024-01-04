@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Breadcrumb from '../../../components/Breadcrumb';
 
 const AgeCalculator = () => {
     const [birthDate, setBirthDate] = useState('');
@@ -25,7 +26,10 @@ const AgeCalculator = () => {
 
     return (
         <div className="text-white container">
-            <h1 className="text-white mb-4">Age Calculator</h1>
+
+            <Breadcrumb title={'Age Calculator'} description={'Calculate Age Easilly'} />
+
+
             <div className="text-white row">
                 <div className="text-white col-md-6">
                     <label htmlFor="birthDate" className="text-white form-label">

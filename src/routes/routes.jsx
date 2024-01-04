@@ -13,6 +13,7 @@ import CroperPage from "../pages/Category/ImageTools/ImageResizer/CroperPage";
 import BackgroundRemover from "../pages/Category/ImageTools/BackgroundRemover/BackgroundRemover";
 import ImageCompression from "../pages/Category/ImageTools/ImageCompression/ImageCompression";
 import PdfToImage from "../pages/Category/FileTools/PdfToImage";
+import LoginPage from "../pages/Shared/Auth/LoginPage";
 
 export const router = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/login",
-                element: <NotFound />,
+                element: <LoginPage />,
             },
             {
                 path: ":category/:tool",

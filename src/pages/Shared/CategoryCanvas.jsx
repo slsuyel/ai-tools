@@ -14,6 +14,11 @@ const menuItems = [
         link: '/blog'
     },
     {
+        id: 2,
+        label: 'Chat',
+        link: '/chat'
+    },
+    {
         id: 3,
         label: 'Login',
         link: '/login'

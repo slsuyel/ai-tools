@@ -10,6 +10,9 @@ const Home = () => {
         return <Loader />
     }
 
+
+
+
     return (
         <section className="primary-bg  mx-auto py-2 position-relative">
             <h1 className="py-4 text-center fw-bold" style={{ color: '#6EC1E4', fontSize: '55px' }}>  All Categories of tools</h1>
@@ -37,10 +40,13 @@ const Home = () => {
                 </>))
             }
 
-            <div className="position-absolute chatBoat">
-                <h6>Chat</h6>
+            {/* <div className="position-absolute chatBoat">
+                <button onClick={handleChatBtn}>Chat</button>
             </div>
+            {
+                chatOpen && <ChatBoat />
 
+            } */}
 
         </section>
     );

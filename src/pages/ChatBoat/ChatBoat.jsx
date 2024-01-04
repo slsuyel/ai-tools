@@ -85,7 +85,7 @@ function ChatBoat() {
 
     return (
         <div className="App">
-            <div style={{ position: "relative", height: "800px", width: "700px" }}>
+            <div style={{ position: "fixed", bottom: "20px", right: "20px", height: "400px", width: "300px", zIndex: "999" }}>
                 <MainContainer>
                     <ChatContainer>
                         <MessageList
@@ -93,7 +93,6 @@ function ChatBoat() {
                             typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
                         >
                             {messages.map((message, i) => {
-                                // console.log(message)
                                 return <Message key={i} model={message} />
                             })}
                         </MessageList>

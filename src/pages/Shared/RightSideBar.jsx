@@ -56,15 +56,16 @@ const RightSideBar = ({ categoryName }) => {
 
                         <div className="align-items-center d-flex flex-wrap gap-2 justify-content-center my-4">
                             {
-                                tools.tools.map((tool) => <Link
-                                    key={tool.name}
-                                    className="tool-btn"
-                                    // to={'/age-calculator'}
-                                    to={`${tools?.slug}/${tool.slug}`}
-                                >
-                                    <i className="fa-solid fa-screwdriver-wrench"></i>{" "}
-                                    {tool.name.length < 17 ? tool.name : `${tool.name.substring(0, 15)}..`}
-                                </Link>
+                                tools.tools.map((tool) =>
+                                    <Link
+                                        key={tool.name}
+                                        className="tool-btn"
+
+                                        to={`/${tools?.slug}/${tool.slug}`}
+                                    >
+                                        <i className="fa-solid fa-screwdriver-wrench"></i>{" "}
+                                        {tool.name.length < 17 ? tool.name : `${tool.name.substring(0, 15)}..`}
+                                    </Link>
                                 )
                             }
                         </div>

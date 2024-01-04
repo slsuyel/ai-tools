@@ -111,3 +111,8 @@ code {
 .form-control:focus {
   box-shadow: none !important;
 }
+
+
+.nav-bg-clr.d-block.d-sm-none.fixed-top.text-end {
+  background: linear-gradient(172deg, #090851, #3a28da);
+}

@@ -12,13 +12,19 @@ import NagadCal from './../pages/Category/FinanceTools/NagadCal';
 import UrlShortener from '../pages/Category/UtilityTools/UrlShortner/UrlShortner';
 import QRCodeGenerator from '../pages/Category/UtilityTools/UrlShortner/QRCodeGenerator/QRCodeGenerator';
 import RrandomPasswordGenerator from '../pages/Category/RandomGenerators/RrandomPasswordGenerator/RrandomPasswordGenerator';
+import RightSideBar from '../pages/Shared/RightSideBar';
 
 const ToolsLayout = () => {
     const location = useLocation();
-    const path = location.pathname.split('/').pop()
-    if (!path || !location) {
+    const pathname = location.pathname;
+    const segments = pathname.split('/');
+    const categoryName = segments[1];
+    const path = segments[segments.length - 1];
+
+    if (!path || !location || !categoryName) {
         return <Loader />
     }
+
     return (
         <div className='row w-100 mx-auto bg-gradient py-5' style={{ paddingBottom: '80px' }} /*  */>
 
@@ -49,8 +55,10 @@ const ToolsLayout = () => {
                                                             <NotFound />
                 }
             </div>
+
+
             <div className='col-md-4'>
-                <h1 className='text-white text-center'>Sidebar</h1>
+                <RightSideBar categoryName={categoryName} />
             </div>
 
         </div>

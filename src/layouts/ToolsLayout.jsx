@@ -16,6 +16,7 @@ import RightSideBar from '../pages/Shared/RightSideBar';
 import LanguageTranslate from '../pages/Category/LanguageTools/LanguageTranslate/LanguageTranslate';
 import SpellCheckerPage from '../pages/Category/LanguageTools/SpellChecker/SpellCheckerPage';
 import ImageToTextPage from '../pages/Category/FileTools/ImageToTextPage';
+import RandomImage from './../pages/Category/RandomGenerators/RandomImage/RandomImage';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -59,9 +60,11 @@ const ToolsLayout = () => {
                                                                     <SpellCheckerPage /> :
                                                                     path == 'image-to-text' ?
                                                                         <ImageToTextPage /> :
+                                                                        path == 'images-generator' ?
+                                                                            <RandomImage /> :
 
 
-                                                                        <NotFound />
+                                                                            <NotFound />
                 }
             </div>
 

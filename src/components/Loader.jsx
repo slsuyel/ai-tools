@@ -1,14 +1,14 @@
 import React from 'react';
 
 const Loader = () => {
-    const loaderContainerStyle = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh', // Adjust this based on your layout
-    };
+  const loaderContainerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '40vh',
+  };
 
-    const loaderStyle = `
+  const loaderStyle = `
     .loader {
       --s: 25px;
       --g: 5px;
@@ -39,12 +39,12 @@ const Loader = () => {
     }
   `;
 
-    return (
-        <div style={loaderContainerStyle}>
-            <style>{loaderStyle}</style>
-            <div className="loader"></div>
-        </div>
-    );
+  return (
+    <div style={loaderContainerStyle}>
+      <style>{loaderStyle}</style>
+      <div className="loader"></div>
+    </div>
+  );
 };
 
 export default Loader;

@@ -230,6 +230,10 @@
                 "slug": "name-generator"
             },
             {
+                "name": "Images Generator",
+                "slug": "images-generator"
+            },
+            {
                 "name": "Random Number Generator",
                 "slug": "random-number-generator"
             },

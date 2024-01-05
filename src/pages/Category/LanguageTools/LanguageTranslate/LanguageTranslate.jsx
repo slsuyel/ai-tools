@@ -5,12 +5,32 @@ const LanguageTranslate = () => {
     const [inputText, setInputText] = useState('');
     const [translatedText, setTranslatedText] = useState('');
 
-    const handleTranslate = () => {
-        // Implement translation logic here
-        // For demonstration purposes, let's just reverse the input text
-        const reversedText = inputText.split('').reverse().join('');
-        setTranslatedText(reversedText);
+    const handleTranslate = async () => {
+        try {
+            const response = await fetch('https://api.translateplus.io/v1/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'APIKeyHeader': '94680b8ae34f9666092f312097df1ad5e6812ca6',
+                },
+                body: JSON.stringify({
+                    text: inputText,
+                    source: 'auto',
+                    target: 'bn',
+                }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setTranslatedText(data.translations.translation);
+            } else {
+                console.error('Translation failed:', response.status, response.statusText);
+            }
+        } catch (error) {
+            console.error('Translation error:', error);
+        }
     };
+
 
     return (
         <Container>

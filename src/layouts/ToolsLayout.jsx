@@ -13,6 +13,8 @@ import UrlShortener from '../pages/Category/UtilityTools/UrlShortner/UrlShortner
 import QRCodeGenerator from '../pages/Category/UtilityTools/UrlShortner/QRCodeGenerator/QRCodeGenerator';
 import RrandomPasswordGenerator from '../pages/Category/RandomGenerators/RrandomPasswordGenerator/RrandomPasswordGenerator';
 import RightSideBar from '../pages/Shared/RightSideBar';
+import LanguageTranslate from '../pages/Category/LanguageTools/LanguageTranslate/LanguageTranslate';
+import SpellCheckerPage from '../pages/Category/LanguageTools/SpellChecker/SpellCheckerPage';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -50,9 +52,13 @@ const ToolsLayout = () => {
                                                         <QRCodeGenerator /> :
                                                         path == 'random-password-generator' ?
                                                             <RrandomPasswordGenerator /> :
+                                                            path == 'language-translate' ?
+                                                                <LanguageTranslate /> :
+                                                                path == 'spell-checker' ?
+                                                                    <SpellCheckerPage /> :
 
 
-                                                            <NotFound />
+                                                                    <NotFound />
                 }
             </div>
 

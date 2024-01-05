@@ -196,12 +196,12 @@
         "slug": "language-tools",
         "tools": [
             {
-                "name": "Language Translation Tool",
-                "slug": "language-translation-tool"
+                "name": "Language Translation",
+                "slug": "language-translate"
             },
             {
-                "name": "Grammar and Spell Checker",
-                "slug": "grammar-spell-checker"
+                "name": "Spell Checker",
+                "slug": "spell-checker"
             },
             {
                 "name": "Text Summarizer",

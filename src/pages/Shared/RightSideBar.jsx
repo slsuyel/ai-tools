@@ -51,16 +51,15 @@ const RightSideBar = ({ categoryName }) => {
             {
 
                 randomSubset.map(((tools, index) => <>
-                    <div className="w-100 mx-auto my-2 " key={index} >
+                    <div className="w-100 mx-auto my-2 " key={index + 1} >
                         <h5 className="py-2 text-center text-white" > {tools.category}</h5>
 
                         <div className="align-items-center d-flex flex-wrap gap-2 justify-content-center my-4">
                             {
                                 tools.tools.map((tool) =>
                                     <Link
-                                        key={tool.name}
+                                        key={tool.slug}
                                         className="tool-btn"
-
                                         to={`/${tools?.slug}/${tool.slug}`}
                                     >
                                         <i className="fa-solid fa-screwdriver-wrench"></i>{" "}

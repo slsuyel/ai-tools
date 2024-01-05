@@ -15,6 +15,7 @@ import RrandomPasswordGenerator from '../pages/Category/RandomGenerators/Rrandom
 import RightSideBar from '../pages/Shared/RightSideBar';
 import LanguageTranslate from '../pages/Category/LanguageTools/LanguageTranslate/LanguageTranslate';
 import SpellCheckerPage from '../pages/Category/LanguageTools/SpellChecker/SpellCheckerPage';
+import ImageToTextPage from '../pages/Category/FileTools/ImageToTextPage';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -56,9 +57,11 @@ const ToolsLayout = () => {
                                                                 <LanguageTranslate /> :
                                                                 path == 'spell-checker' ?
                                                                     <SpellCheckerPage /> :
+                                                                    path == 'image-to-text' ?
+                                                                        <ImageToTextPage /> :
 
 
-                                                                    <NotFound />
+                                                                        <NotFound />
                 }
             </div>
 

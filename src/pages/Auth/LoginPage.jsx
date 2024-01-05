@@ -16,8 +16,9 @@ const LoginPage = () => {
         setPassword('');
     };
 
+
     return (
-        <div className="container mt-5">
+        <div data-aos="fade-left" className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6">
                     <div className="bg-gradient bg-transparent card text-white">

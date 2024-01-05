@@ -122,4 +122,31 @@ code {
   top: 70px;
   left: 21px;
   color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 41px;
+  right: 24px;
+  animation: floatAnimation 2s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.chatContainer {
+  padding: 16px;
+  margin-bottom: 16px;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }

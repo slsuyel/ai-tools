@@ -6,7 +6,7 @@ const SpellCheckerPage = () => {
     const [inputText, setInputText] = useState('');
     const [corrections, setCorrections] = useState([]);
     const [loading, setLoading] = useState(false);
-    const apiKey = 'LKJO8OBFZMThX2r23EUz1OlvI0ypK7F0';
+    const apiKey = import.meta.env.VITE_SPELL_CHECK_APIKEY;
 
     const handleInputChange = (event) => {
         const inputValue = event.target.value;

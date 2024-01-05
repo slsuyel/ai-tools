@@ -57,7 +57,7 @@ const LanguageTranslate = () => {
                                 readOnly
                             />
                         </FormGroup>
-                        <Button color="primary" onClick={handleTranslate}>
+                        <Button color="primary" disabled onClick={handleTranslate}>
                             Translate
                         </Button>
                     </Form>

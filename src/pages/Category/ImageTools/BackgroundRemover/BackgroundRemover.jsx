@@ -14,7 +14,7 @@ export default function BackgroundRemover() {
 
     const handleRemoveBackground = async () => {
         setLoading(true);
-        const apiKey = '5PH3XUqpCr2DMxXoBfwpnNaN';
+        const apiKey = import.meta.env.VITE_REMOVE_BG_APIKEY;
         const apiUrl = 'https://api.remove.bg/v1.0/removebg';
 
         const formData = new FormData();

@@ -118,8 +118,8 @@ code {
 }
 
 .chatBoat {
-  position: absolute;
-  top: -44px;
-  right: 21px;
+  position: fixed;
+  top: 70px;
+  left: 21px;
   color: white;
 }

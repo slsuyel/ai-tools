@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/images/tools-master.png';
-import ChatBoat from '../ChatBoat/ChatBoat';
 
 const Header = () => {
     const [isFixed, setIsFixed] = useState(false);
-    const [chatOpen, setChatOpen] = useState(false)
+
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
@@ -39,9 +38,6 @@ const Header = () => {
         }
     ];
 
-    const handleChatBtn = () => {
-        setChatOpen(!chatOpen)
-    }
 
 
     return (
@@ -71,22 +67,12 @@ const Header = () => {
                             </NavLink>
                         ))}
 
-                        <div className='my-auto'> <button
-                            className={`${chatOpen ? 'bg-dark' : 'bg-gradient-orange '}  border-0 rounded text-white`}
-
-                            onClick={handleChatBtn}><i className="fa-regular fa-comment me-1"></i>
-                            {`${chatOpen ? 'Chatting' : 'Chat'}`}
-
-
-                        </button></div>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
 
-            {
-                chatOpen && <ChatBoat />
 
-            }
+
         </>
     );
 };

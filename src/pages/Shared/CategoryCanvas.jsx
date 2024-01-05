@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/tools-master.png';
 import '../../App.css'
+
 const menuItems = [
     {
         id: 1,
@@ -13,11 +14,7 @@ const menuItems = [
         label: 'Blog',
         link: '/blog'
     },
-    {
-        id: 2,
-        label: 'Chat',
-        link: '/chat'
-    },
+
     {
         id: 3,
         label: 'Login',
@@ -32,8 +29,12 @@ const CategoryCanvas = () => {
         setIsOffcanvasOpen(!isOffcanvasOpen);
     };
 
+
+
+
+
     return (
-        <div className='nav-p-bg d-block d-sm-none fixed-top text-end'  >
+        <> <div className='nav-p-bg d-block d-sm-none fixed-top text-end'  >
             <button type="button" className="border border-primary-subtle btn m-1 rounded-0 text-end" onClick={toggleOffcanvas}>
                 <span className="text-white"><i className="fa-solid fa-bars"></i></span>
             </button>
@@ -57,9 +58,14 @@ const CategoryCanvas = () => {
                             </li>
                         ))}
                     </ul>
+
+
+
                 </div>
             </div>
         </div>
+
+        </>
     );
 };
 

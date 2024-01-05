@@ -14,7 +14,6 @@ import BackgroundRemover from "../pages/Category/ImageTools/BackgroundRemover/Ba
 import ImageCompression from "../pages/Category/ImageTools/ImageCompression/ImageCompression";
 import PdfToImage from "../pages/Category/FileTools/PdfToImage";
 import LoginPage from "../pages/Auth/LoginPage";
-import ChatBoat from "../pages/ChatBoat/ChatBoat";
 
 export const router = createBrowserRouter([
     {
@@ -26,10 +25,7 @@ export const router = createBrowserRouter([
                 path: "/",
                 element: <Home />,
             },
-            {
-                path: "/chat",
-                element: <ChatBoat />,
-            },
+
             {
                 path: "/blog",
                 element: <NotFound />,

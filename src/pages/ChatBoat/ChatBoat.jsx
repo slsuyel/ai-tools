@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
     "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
@@ -73,7 +73,7 @@ function ChatBoat() {
             }).then((data) => {
                 return data.json();
             }).then((data) => {
-                // console.log(data);
+                console.log(data);
                 setMessages([...chatMessages, {
                     message: data.choices[0]?.message?.content || "ChatGPT couldn't generate a response",
                     sender: "ChatGPT"
@@ -84,8 +84,8 @@ function ChatBoat() {
     }
 
     return (
-        <div className="App">
-            <div style={{ position: "fixed", bottom: "20px", right: "20px", height: "400px", width: "300px", zIndex: "999" }}>
+        <div className="position-relative">
+            <div style={{ bottom: "20px", right: "20px", height: "400px", width: "300px", zIndex: "999" }} >
                 <MainContainer>
                     <ChatContainer>
                         <MessageList

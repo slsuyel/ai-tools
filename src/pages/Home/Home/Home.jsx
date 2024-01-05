@@ -3,14 +3,11 @@ import useToolsCategories from "../../../hooks/useToolsCategories";
 import Loader from "../../../components/Loader";
 
 const Home = () => {
-
     const { toolsCategories, isLoading } = useToolsCategories()
 
     if (isLoading) {
         return <Loader />
     }
-
-
 
 
     return (

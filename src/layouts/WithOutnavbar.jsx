@@ -9,7 +9,6 @@ import ChatControl from '../pages/ChatBoat/ChatControl'
 export default function WithOutnavbar() {
   return (
     <main className='primary-bg'>
-
       <Header />
       <CategoryCanvas />
       <Outlet />

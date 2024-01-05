@@ -29,7 +29,7 @@ const ToolsLayout = () => {
     }
 
     return (
-        <div className='row w-100 mx-auto bg-gradient py-5' style={{ paddingBottom: '80px' }} /*  */>
+        <div className='row w-100 mx-auto bg-gradient py-5 mt-3' style={{ paddingBottom: '80px' }} /*  */>
 
             <div className='col-md-8'>
                 {

@@ -36,33 +36,33 @@ export const router = createBrowserRouter([
             },
 
             {
-                path: ":category/:tool",
+                path: "tools/:tool",
                 element: <ToolsLayout />,
             },
 
 
             {
-                path: "/coding-tools/online-code-editor",
+                path: "/tools/online-code-editor",
                 element: <OnlineCodeEditor />,
             },
             {
-                path: "/coding-tools/code-formatter",
+                path: "/tools/code-formatter",
                 element: <CodeFormatter />,
             },
             {
-                path: "/image-tools/image-resizer",
+                path: "/tools/image-resizer",
                 element: <CroperPage />,
             },
             {
-                path: "/image-tools/background-remover",
+                path: "/tools/background-remover",
                 element: <BackgroundRemover />,
             },
             {
-                path: "/image-tools/image-compressor",
+                path: "/tools/image-compressor",
                 element: <ImageCompression />,
             },
             {
-                path: "/document-converters/pdf-to-image",
+                path: "/tools/pdf-to-image",
                 element: <PdfToImage />,
             },
 

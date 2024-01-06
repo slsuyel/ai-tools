@@ -11,7 +11,7 @@ const Home = () => {
 
     return (
         <section className="primary-bg  mx-auto py-2 mt-2 position-relative">
-            <h1 className="py-4 text-center fw-bold mt-3" style={{ color: '#6EC1E4', fontSize: '55px' }}>  All Categories of tools</h1>
+            <h1 className="py-4 text-center fw-bold mt-3" style={{ color: '#6EC1E4', fontSize: '35px' }}>  All Categories of tools</h1>
             {
                 toolsCategories.map(((tools) => <>
                     <div className="w-100 mx-auto my-2 " key={tools.name} >

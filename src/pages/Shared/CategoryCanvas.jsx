@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/images/tools-master.png';
+import logo from '../../assets/images/logo-icon.png';
+import logo2 from '../../assets/images/tools-master.png';
 import '../../App.css'
 
 const menuItems = [
@@ -48,10 +49,25 @@ const CategoryCanvas = () => {
 
     return (
         <>
-            <div className='align-items-center d-block d-flex d-sm-none fixed-top justify-content-between nav-p-bg px-1 text-end pb-2'  >
+            <div className='align-items-center d-block d-flex d-sm-none fixed-top justify-content-between nav-p-bg px-1 text-end py-2'  >
 
                 <Link to={'/'}>
-                    <img className='img-fluid ms-2' src="https://tools-suyel.netlify.app/assets/tools-master-5b24bd77.png" width={130} alt="" /></Link>
+                    <img className='ms-2' src={logo} width={60} height={50} alt="" /></Link>
+
+                <div className='w-50'>
+                    <input
+                        type="search"
+                        className="form-control bg-transparent search-input text-white"
+                        placeholder="Search any tools"
+                        value={searchTerm}
+                        onChange={handleInputChange}
+
+                    />
+
+
+                </div>
+
+
 
                 <button type="button" className="border border-primary-subtle btn m-1 rounded-0 text-end" onClick={toggleOffcanvas}>
                     <span className="text-white"><i className="fa-solid fa-bars"></i></span>
@@ -64,8 +80,11 @@ const CategoryCanvas = () => {
                     </div>
                     <div className="offcanvas-body">
                         <div>
-                            <img src={logo} alt="" className="img-circle img-fluid m-2" />
+                            <img src={logo2} alt="" className="img-circle img-fluid m-2" />
                         </div>
+
+
+
 
                         <ul className="list-unstyled">
                             {menuItems.map((menuItem) => (
@@ -78,22 +97,7 @@ const CategoryCanvas = () => {
                         </ul>
 
 
-                        <div className="">
-                            <div className=''>
-                                <input
-                                    type="search"
-                                    className="form-control rounded-0"
-                                    placeholder="Search any tools"
-                                    value={searchTerm}
-                                    onChange={handleInputChange}
-                                />
-                            </div>
-                            {/* <div className=" text-nowrap">
-                                <button className="btn btn-primary rounded-0 ">
-                                    <i className="fa fa-search me-1"></i>
-                                    Search</button>
-                            </div> */}
-                        </div>
+
                     </div>
                 </div>
             </div>

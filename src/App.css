@@ -119,8 +119,8 @@ code {
 
 .chatBoat {
   position: fixed;
-  top: 70px;
-  left: 21px;
+  bottom: -50px;
+  left: -15px;
   color: white;
   transition: all 0.3s ease-in-out;
 }
@@ -149,4 +149,8 @@ code {
   margin-bottom: 16px;
   transform: translateY(-20px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.search-input::placeholder {
+  color: rgb(255, 255, 255) !important;
 }

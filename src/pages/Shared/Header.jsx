@@ -88,7 +88,7 @@ const Header = () => {
                         <div className=''>
                             <input
                                 type="search"
-                                className="form-control rounded-0"
+                                className="form-control "
                                 placeholder="Search any tools"
                                 value={searchTerm}
                                 onChange={handleInputChange}

@@ -14,6 +14,7 @@ import BackgroundRemover from "../pages/Category/ImageTools/BackgroundRemover/Ba
 import ImageCompression from "../pages/Category/ImageTools/ImageCompression/ImageCompression";
 import PdfToImage from "../pages/Category/FileTools/PdfToImage";
 import LoginPage from "../pages/Auth/LoginPage";
+import Search from "../pages/Home/Search/Search";
 
 export const router = createBrowserRouter([
     {
@@ -36,33 +37,37 @@ export const router = createBrowserRouter([
             },
 
             {
-                path: "tools/:tool",
+                path: ":slug/:tool",
                 element: <ToolsLayout />,
+            },
+            {
+                path: "search-results/:search",
+                element: <Search />,
             },
 
 
             {
-                path: "/tools/online-code-editor",
+                path: ":slug/online-code-editor",
                 element: <OnlineCodeEditor />,
             },
             {
-                path: "/tools/code-formatter",
+                path: ":slug/code-formatter",
                 element: <CodeFormatter />,
             },
             {
-                path: "/tools/image-resizer",
+                path: ":slug/image-resizer",
                 element: <CroperPage />,
             },
             {
-                path: "/tools/background-remover",
+                path: ":slug/background-remover",
                 element: <BackgroundRemover />,
             },
             {
-                path: "/tools/image-compressor",
+                path: ":slug/image-compressor",
                 element: <ImageCompression />,
             },
             {
-                path: "/tools/pdf-to-image",
+                path: ":slug/pdf-to-image",
                 element: <PdfToImage />,
             },
 

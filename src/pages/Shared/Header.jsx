@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link, NavLink, } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/tools-master.png';
 
 const Header = () => {
     const [isFixed, setIsFixed] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,7 +27,6 @@ const Header = () => {
             label: 'Home',
             link: '/'
         },
-
         {
             id: 2,
             label: 'Blog',
@@ -39,6 +39,15 @@ const Header = () => {
         }
     ];
 
+    const handleInputChange = (e) => {
+        const inputValue = e.target.value.trim();
+        setSearchTerm(inputValue);
+        if (inputValue) {
+            navigate(`search-results/${inputValue}`);
+        } else {
+            navigate('/');
+        }
+    };
 
 
     return (
@@ -67,35 +76,29 @@ const Header = () => {
                                 {item.label}
                             </NavLink>
                         ))}
-
                     </Nav>
-
-
 
                     <div className="align-items-center d-flex">
                         <div className=''>
                             <input
-                                type="text"
+                                type="search"
                                 className="form-control rounded-0"
-                                placeholder="Search tools"
+                                placeholder="Search any tools"
                                 value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
+                                onChange={handleInputChange}
                             />
                         </div>
-                        <div className="text-nowrap">
-                            <button className="btn btn-primary rounded-0" >
+                        {/*  <div className="text-nowrap">
+                       
+                            <button  className="btn btn-primary rounded-0" >
                                 <i className="fa fa-search me-1"></i>
                                 Search
                             </button>
-                        </div>
+                        </div> */}
                     </div>
 
                 </Navbar.Collapse>
             </Navbar>
-
-
-
-
         </>
     );
 };

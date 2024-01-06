@@ -23,7 +23,7 @@ const Home = () => {
                                     key={tool.name}
                                     className="tool-btn"
                                     // to={'/age-calculator'}
-                                    to={`tools/${tool.slug}`}
+                                    to={`${tools.slug}/${tool.slug}`}
                                 >
                                     <i className="fa-solid fa-screwdriver-wrench"></i>{" "}
                                     {tool.name.length < 17 ? tool.name : `${tool.name.substring(0, 15)}..`}

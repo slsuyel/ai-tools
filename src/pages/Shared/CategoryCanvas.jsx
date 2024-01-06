@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/tools-master.png';
 import '../../App.css'
 
@@ -24,13 +24,22 @@ const menuItems = [
 
 const CategoryCanvas = () => {
     const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
-
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
     const toggleOffcanvas = () => {
         setIsOffcanvasOpen(!isOffcanvasOpen);
     };
 
 
-
+    const handleInputChange = (e) => {
+        const inputValue = e.target.value.trim();
+        setSearchTerm(inputValue);
+        if (inputValue) {
+            navigate(`search-results/${inputValue}`);
+        } else {
+            navigate('/');
+        }
+    };
 
 
     return (
@@ -65,15 +74,21 @@ const CategoryCanvas = () => {
                         </ul>
 
 
-                        <div className="align-items-center d-flex">
+                        <div className="">
                             <div className=''>
-                                <input type="text" className="form-control rounded-0" placeholder="Search tools" />
+                                <input
+                                    type="search"
+                                    className="form-control rounded-0"
+                                    placeholder="Search any tools"
+                                    value={searchTerm}
+                                    onChange={handleInputChange}
+                                />
                             </div>
-                            <div className=" text-nowrap">
+                            {/* <div className=" text-nowrap">
                                 <button className="btn btn-primary rounded-0 ">
                                     <i className="fa fa-search me-1"></i>
                                     Search</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

@@ -1,37 +1,40 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react/no-unescaped-entities */
-import logo from '../../assets/images/tools-master.png'
-const Footer = () => {
+import { Link } from 'react-router-dom';
+import logo from '../../assets/images/tools-master.png';
 
+const Footer = () => {
     return (
         <footer className="pt-5 nav-p-bg">
-            <div className="container px-4 px-md-3 ">
+            <div className="container px-4 px-md-3">
                 <div className="row">
-                    <div className="col-lg-3 mb-3">
+                    <div className="col-lg-3 ">
                         <div className="list-unstyled small">
-                            <img src={logo} width={'250px'} alt="Logo" />
+                            <img src={logo} width={'240px'} alt="Logo" />
                             <p className="mb-2 text-white">
-                                A learning management system (LMS) is a software application for the administration, documentation, tracking, reporting, automation
+                                "Tools Master - Ai: Your AI toolkit for streamlined online tasks. Effortless innovation, powerful results. Elevate your digital game instantly! Unleash AI's power effortlessly!"
+
                             </p>
                         </div>
                     </div>
                     <div className="col-6 col-lg-3 mb-3">
-                        <h5 className="text-white">Other links:</h5>
+                        <h5 className="text-white">Importants links:</h5>
                         <ul className="list-unstyled">
-                            <li className="mb-2"><a className='text-decoration-none text-white' href="#">Login</a></li>
-                            <li className="mb-2"><a className='text-decoration-none text-white' href="#">Registration</a></li>
-                            <li className="mb-2"><a className='text-decoration-none text-white' href="#">Blog</a></li>
-                            <li className="mb-2"><a className='text-decoration-none text-white' href="#">Contact</a></li>
+                            <li className="mb-2"><Link className='text-decoration-none text-white' to="/login">Login</Link></li>
+                            <li className="mb-2"><Link className='text-decoration-none text-white' to="/registration">Registration</Link></li>
+                            <li className="mb-2"><Link className='text-decoration-none text-white' to="/blog">Blog</Link></li>
 
                         </ul>
                     </div>
+
                     <div className="col-6 col-lg-3 mb-4">
-                        <h5 className="text-white">University Link:</h5>
+                        <h5 className="text-white">Others Link:</h5>
                         <ul className="list-unstyled">
-                            <li className="mb-2"><a className='text-decoration-none text-white' href="#">Dhaka University</a></li>
-                            <li className="mb-2"><a className='text-decoration-none text-white' href="#">Rajshahi University</a></li>
-                            <li className="mb-2"><a className='text-decoration-none text-white' href="#">University of Chittagong</a></li>
-                            <li className="mb-2"><a className='text-decoration-none text-white' href="#">Cluster University</a></li>
+                            <li className="mb-2"><Link className='text-decoration-none text-white' to="/">Help & Support</Link></li>
+                            <li className="mb-2"><Link className='text-decoration-none text-white' to="/rajshahi-university">Career</Link></li>
+                            <li className="mb-2"><Link className='text-decoration-none text-white' to="/rajshahi-university">Terms & conditions</Link></li>
+
+
                         </ul>
                     </div>
 
@@ -53,9 +56,8 @@ const Footer = () => {
                         </div>
                         <div className='mt-4 text-end'>
                             <h6 className='mb-0 '>Technical support:</h6>
-                            <a className='fs-5 ms-3  text-decoration-none text-white' target="_blank" href="https://www.linkedin.com/in/slsuyel">Suel Haque</a>
+                            <a className='fs-5 ms-3  text-decoration-none text-white' target="_blank" href="https://www.linkedin.com/in/slsuyel">Suyel Haque</a>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -64,7 +66,7 @@ const Footer = () => {
             </div>
 
             <div className="text-center text-white px-4 py-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                "© {new Date().getFullYear()} School of excellence. All rights reserved."
+                "© {new Date().getFullYear()} Tools Master - AI. All rights reserved."
             </div>
         </footer>
     );

@@ -130,6 +130,10 @@
         "slug": "file-tools",
         "tools": [
             {
+                "name": "Image to text",
+                "slug": "image-to-text"
+            },
+            {
                 "name": "File Format Converter",
                 "slug": "file-format-converter"
             },
@@ -196,12 +200,12 @@
         "slug": "language-tools",
         "tools": [
             {
-                "name": "Language Translation Tool",
-                "slug": "language-translation-tool"
+                "name": "Language Translation",
+                "slug": "language-translate"
             },
             {
-                "name": "Grammar and Spell Checker",
-                "slug": "grammar-spell-checker"
+                "name": "Spell Checker",
+                "slug": "spell-checker"
             },
             {
                 "name": "Text Summarizer",
@@ -224,6 +228,10 @@
             {
                 "name": "Name Generator",
                 "slug": "name-generator"
+            },
+            {
+                "name": "Images Generator",
+                "slug": "images-generator"
             },
             {
                 "name": "Random Number Generator",

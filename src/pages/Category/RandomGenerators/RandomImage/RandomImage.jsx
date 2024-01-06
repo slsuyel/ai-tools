@@ -32,17 +32,16 @@ const RandomImage = () => {
         // Use customCategory if available, otherwise use the selected category
         const apiUrl = `https://source.unsplash.com/featured/?${customCategory || category}`;
 
-        const fetchImage = () => {
-            return fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Network response was not ok: ${response.status}`);
-                    }
-                    return response.url;
-                })
-                .catch(error => {
-                    console.error('Error fetching random image:', error);
-                });
+        const fetchImage = async () => {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.status}`);
+                }
+                return response.url;
+            } catch (error) {
+                console.error('Error fetching random image:', error);
+            }
         };
         // Fetch 8 random images
         const fetchImages = Array.from({ length: 8 }, () => fetchImage());

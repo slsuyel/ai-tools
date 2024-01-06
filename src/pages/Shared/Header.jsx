@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, } from 'react-router-dom';
 import logo from '../../assets/images/tools-master.png';
 
 const Header = () => {
     const [isFixed, setIsFixed] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -68,8 +69,30 @@ const Header = () => {
                         ))}
 
                     </Nav>
+
+
+
+                    <div className="align-items-center d-flex">
+                        <div className=''>
+                            <input
+                                type="text"
+                                className="form-control rounded-0"
+                                placeholder="Search tools"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                        </div>
+                        <div className="text-nowrap">
+                            <button className="btn btn-primary rounded-0" >
+                                <i className="fa fa-search me-1"></i>
+                                Search
+                            </button>
+                        </div>
+                    </div>
+
                 </Navbar.Collapse>
             </Navbar>
+
 
 
 

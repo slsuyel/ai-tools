@@ -65,7 +65,16 @@ const CategoryCanvas = () => {
                         </ul>
 
 
-
+                        <div className="align-items-center d-flex">
+                            <div className=''>
+                                <input type="text" className="form-control rounded-0" placeholder="Search tools" />
+                            </div>
+                            <div className=" text-nowrap">
+                                <button className="btn btn-primary rounded-0 ">
+                                    <i className="fa fa-search me-1"></i>
+                                    Search</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

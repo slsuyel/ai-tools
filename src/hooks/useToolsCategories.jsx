@@ -6,7 +6,7 @@ const useToolsCategories = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const fetchStudentData = async () => {
+        const fetchToolsData = async () => {
             try {
                 const response = await callApi("GET", ``);
                 setToolsCategories(response);
@@ -16,7 +16,7 @@ const useToolsCategories = () => {
                 setIsLoading(false);
             }
         };
-        fetchStudentData();
+        fetchToolsData();
     }, []);
     return { toolsCategories, isLoading };
 };

@@ -9,7 +9,6 @@ const Home = () => {
         return <Loader />
     }
 
-
     return (
         <section className="primary-bg  mx-auto py-2 mt-2 position-relative">
             <h1 className="py-4 text-center fw-bold mt-3" style={{ color: '#6EC1E4', fontSize: '55px' }}>  All Categories of tools</h1>

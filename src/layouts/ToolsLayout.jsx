@@ -30,9 +30,9 @@ const ToolsLayout = () => {
     }
 
     return (
-        <div className='row w-100 mx-auto bg-gradient py-5 mt-3' style={{ paddingBottom: '80px' }} /*  */>
+        <div className='row w-100 mx-auto bg-gradient py-5 ' style={{ paddingBottom: '80px' }} /*  */>
 
-            <div className='col-md-8'>
+            <div className='col-md-8 pt-3'>
                 {
                     path == 'age-calculator' ?
                         <AgeCalculator /> :
@@ -69,7 +69,7 @@ const ToolsLayout = () => {
             </div>
 
 
-            <div className='col-md-4'>
+            <div className='col-md-4 pt-3'>
                 <RightSideBar categoryName={categoryName} />
             </div>
 

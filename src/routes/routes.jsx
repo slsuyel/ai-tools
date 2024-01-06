@@ -5,7 +5,6 @@ import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/Home/Home/Home";
 import ToolsLayout from "../layouts/ToolsLayout";
 import ScrollToTop from "../components/ScrollToTop";
-import NotFound from "../components/NotFound";
 import OnlineCodeEditor from "../pages/Category/CodingTools/OnlineCodeEditor";
 import CodeFormatter from "../pages/Category/CodingTools/CodeFormatter/CodeFormatter";
 
@@ -15,6 +14,7 @@ import ImageCompression from "../pages/Category/ImageTools/ImageCompression/Imag
 import PdfToImage from "../pages/Category/FileTools/PdfToImage";
 import LoginPage from "../pages/Auth/LoginPage";
 import Search from "../pages/Home/Search/Search";
+import Blogs from "../pages/Home/Blogs/Blogs";
 
 export const router = createBrowserRouter([
     {
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
 
             {
                 path: "/blog",
-                element: <NotFound />,
+                element: <Blogs />,
             },
             {
                 path: "/login",

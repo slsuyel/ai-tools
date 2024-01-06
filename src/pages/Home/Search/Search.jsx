@@ -1,7 +1,7 @@
 import useSearchTool from '../../../hooks/useSearchTool';
 import { Link, useLocation } from 'react-router-dom';
 import Loader from '../../../components/Loader';
-import Home from '../Home/Home';
+import RightSideBar from '../../Shared/RightSideBar';
 
 const Search = () => {
     const location = useLocation();
@@ -30,9 +30,10 @@ const Search = () => {
                         Write a valid tool name or check the bellow
                     </p>
 
-                    <Home />
+
                 </>
             )}
+            <RightSideBar />
         </div>
     );
 };

@@ -41,13 +41,19 @@ const Header = () => {
 
     const handleInputChange = (e) => {
         const inputValue = e.target.value.trim();
-        setSearchTerm(inputValue);
-        if (inputValue) {
-            navigate(`search-results/${inputValue}`);
+        const validInput = /^[a-zA-Z0-9\s]+$/.test(inputValue);
+        if (validInput) {
+            setSearchTerm(inputValue);
+            if (inputValue) {
+                navigate(`search-results/${inputValue}`);
+            }
         } else {
+            setSearchTerm('');
             navigate('/');
         }
     };
+
+
 
 
     return (

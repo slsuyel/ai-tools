@@ -15,6 +15,10 @@ import PdfToImage from "../pages/Category/FileTools/PdfToImage";
 import LoginPage from "../pages/Auth/LoginPage";
 import Search from "../pages/Home/Search/Search";
 import Blogs from "../pages/Home/Blogs/Blogs";
+import DashHome from "../pages/Dashboard/Dash-Home/DashHome";
+import AddBlog from "../pages/Dashboard/Blog/AddBlog";
+import BlogsDas from "../pages/Dashboard/Blog/BlogsDas";
+import Setting from "../pages/Dashboard/Setting/Setting";
 
 export const router = createBrowserRouter([
     {
@@ -79,7 +83,19 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '',
-                element: <div>Home  2</div>
+                element: <DashHome />
+            },
+            {
+                path: 'add/news',
+                element: <AddBlog />
+            },
+            {
+                path: 'news',
+                element: <BlogsDas />
+            },
+            {
+                path: 'setting',
+                element: <Setting />
             },
 
         ]

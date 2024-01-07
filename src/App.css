@@ -154,3 +154,10 @@ code {
 .search-input::placeholder {
   color: rgb(255, 255, 255) !important;
 }
+
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none !important;
+}

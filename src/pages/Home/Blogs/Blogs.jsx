@@ -1,12 +1,16 @@
 import React from 'react';
 import Col6Card from './SIdebars/Col6Card';
 import Col3Bar from './SIdebars/Col3Bar';
+import NavBar from './NavBar/NavBar';
 
 const Blogs = () => {
     return (
-        <>
+        <div className='bg-gradient '>
 
-            <div className=' row w-100 mx-auto my-1'>
+            <NavBar />
+
+
+            <div className=' row w-100 mx-auto my-1 mt-3'>
                 <Col3Bar tittle={'Tech'} />
                 <Col6Card tittle={'Mobile'} />
                 <Col3Bar tittle={'Tech'} />
@@ -28,8 +32,7 @@ const Blogs = () => {
                 <Col3Bar tittle={'Tech'} />
             </div>
 
-
-        </>
+        </div>
     );
 };
 

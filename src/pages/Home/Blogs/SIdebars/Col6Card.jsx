@@ -31,7 +31,7 @@ const Col6Card = ({ tittle }) => {
                         <div className="">
 
                             <h2 className="fs-4 fw-bold lh-1 mb-0 text-white">modi hic dolore iusto consequuntur dolor ducimus fugiat placeat</h2>
-                            <p style={{ color: "#243ae2" }} className='mb-0'> January 3,2024</p>
+                            <p className='mb-0 text-white'> January 3,2024</p>
 
                             <p className='fs-6 mb-0 text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil explicabo aliquam quam expedita, modi hic dolore iusto consequuntur dolor ducimus fugiat placeat, excepturi aspernatur dolorum nemo numquam ab! Qui, iste.</p>
                         </div>

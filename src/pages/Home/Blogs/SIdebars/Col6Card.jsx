@@ -2,7 +2,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Blog.css'
+import useAllNews from '../../../../hooks/useAllNews';
+import SkeletonLoader from '../../../../components/SkeletonLoader/SkeletonLoader';
 const Col6Card = ({ tittle }) => {
+
+    const [allNews, , isLoading] = useAllNews()
+    const randomFourNews = [...allNews].sort(() => Math.random() - 0.5).slice(0, 6);
+
+
+    if (isLoading) {
+        return <div className='content-wrapper'>
+            <div className='content-header'><SkeletonLoader /></div></div>
+    }
+
     return (
         <div className='col-md-6'>
 
@@ -22,7 +34,7 @@ const Col6Card = ({ tittle }) => {
                     <a href="" className='text-decoration-none '>
                         <div className="img-contain rounded-1">
                             <img
-                                src="https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png"
+                                src={allNews[0]?.banner}
                                 alt="Zoomable Image"
                             />
 
@@ -30,10 +42,14 @@ const Col6Card = ({ tittle }) => {
 
                         <div className="">
 
-                            <h2 className="fs-4 fw-bold lh-1 mb-0 text-white">modi hic dolore iusto consequuntur dolor ducimus fugiat placeat</h2>
-                            <p className='mb-0 text-white'> January 3,2024</p>
+                            <h2 className="fs-4 fw-bold lh-1 mb-0 text-white">{allNews[0]?.title}</h2>
+                            <p className='mb-0 text-white'>{new Date(allNews[0].date).toISOString().split('T')[0]}</p>
 
-                            <p className='fs-6 mb-0 text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil explicabo aliquam quam expedita, modi hic dolore iusto consequuntur dolor ducimus fugiat placeat, excepturi aspernatur dolorum nemo numquam ab! Qui, iste.</p>
+                            <p className='fs-6 mb-0 text-white'>
+
+
+                                <div dangerouslySetInnerHTML={{ __html: allNews[0]?.content }} />
+                            </p>
                         </div>
                     </a>
 
@@ -41,36 +57,17 @@ const Col6Card = ({ tittle }) => {
                 </div>
 
                 <div className='col-md-6 mx-auto row'>
-                    <div className='col-md-6'>
-                        <Link to='/news/12' className='text-decoration-none '>
-                            <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
-                            <h6 className='fw-bold mb-0 mt-1 text-white'>  Lorem ipsum dolor sit amet.</h6></Link>
-                    </div>
-                    <div className='col-md-6'>
-                        <Link to='/news/12' className='text-decoration-none '>
-                            <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
-                            <h6 className='fw-bold mb-0 mt-1 text-white'>  Lorem ipsum dolor sit amet.</h6></Link>
-                    </div>
-                    <div className='col-md-6'>
-                        <Link to='/news/12' className='text-decoration-none '>
-                            <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
-                            <h6 className='fw-bold mb-0 mt-1 text-white'>  Lorem ipsum dolor sit amet.</h6></Link>
-                    </div>
-                    <div className='col-md-6'>
-                        <Link to='/news/12' className='text-decoration-none '>
-                            <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
-                            <h6 className='fw-bold mb-0 mt-1 text-white'>  Lorem ipsum dolor sit amet.</h6></Link>
-                    </div>
-                    <div className='col-md-6'>
-                        <Link to='/news/12' className='text-decoration-none '>
-                            <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
-                            <h6 className='fw-bold mb-0 mt-1 text-white'>  Lorem ipsum dolor sit amet.</h6></Link>
-                    </div>
-                    <div className='col-md-6'>
-                        <Link to='/news/12' className='text-decoration-none '>
-                            <img src="https://www.channeltwenty.com/wp-content/uploads/2023/12/CH-NEWS-24-12-23-11-480x320.jpg" alt="" className='img-fluid' />
-                            <h6 className='fw-bold mb-0 mt-1 text-white'>  Lorem ipsum dolor sit amet.</h6></Link>
-                    </div>
+
+                    {
+                        randomFourNews.map((news) => <div key={news._id} className='col-md-6'>
+                            <Link to='/news/12' className='text-decoration-none '>
+                                <img src={news.banner} alt="" className='img-fluid' />
+                                <h6 className='fw-bold mb-0 mt-1 text-white'>  {news.title}</h6></Link>
+                        </div>
+                        )
+                    }
+
+
 
                 </div>
 

@@ -8,7 +8,7 @@ const useAllNews = () => {
     const fetchData = async () => {
         try {
             setIsLoading(true);
-            const res = await fetch(`${baseUrl}/latestnews`);
+            const res = await fetch(`${baseUrl}/blogs`);
             if (!res.ok) {
                 throw new Error("Network response was not ok");
             }

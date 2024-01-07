@@ -2,36 +2,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Blog.css'
-const newsItems = [
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-    },
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-    },
+import SkeletonLoader from '../../../../components/SkeletonLoader/SkeletonLoader';
+import useAllNews from '../../../../hooks/useAllNews';
 
-    {
-        imageSrc: 'https://newsnow-server.vercel.app/uploaded-images/1693248676465-file_1693233299.png',
-        postId: '64ece9cfe8d4b0e8bb55f1c6',
-        title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-    },
-
-];
 const Col3Bar = ({ tittle }) => {
+    const [allNews, , isLoading] = useAllNews()
+
+
+    if (isLoading) {
+        return <div className='content-wrapper'>
+            <div className='content-header'><SkeletonLoader /></div></div>
+    }
+
+    const randomFourNews = [...allNews].sort(() => Math.random() - 0.5).slice(0, 4);
+
     return (
         <div className='col-md-3'>
             <div className="mb-1 mx-auto">
@@ -44,7 +28,7 @@ const Col3Bar = ({ tittle }) => {
                     </span>
                 </h3>
             </div>
-            {newsItems.map((newsItem, index) => (
+            {randomFourNews.map((newsItem, index) => (
                 <div
                     key={index}
                     className="align-items-center d-flex gap-2 mb-1 newscard p-2 rounded-1"
@@ -52,7 +36,7 @@ const Col3Bar = ({ tittle }) => {
                 >
                     <div>
                         <img
-                            src={newsItem.imageSrc}
+                            src={newsItem.banner}
                             alt=""
                             className="img-fluid mb-1"
                             width="180px"
@@ -62,12 +46,12 @@ const Col3Bar = ({ tittle }) => {
                         {/* Replace <a> with <Link> */}
                         <Link
                             className="text-decoration-none text-dark"
-                            to={'/news/12'}
+                            to={`/blog/${newsItem._id}`}
                         >
                             <h6 className="fw-bold">
                                 {newsItem.title}
                             </h6>
-                            <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> January 3,2024</p>
+                            <p style={{ color: "#243ae2" }} className='mb-0'><i className="fas fa-clock me-1 " aria-hidden="true"></i> {new Date(newsItem.date).toISOString().split('T')[0]}</p>
                         </Link>
                     </div>
                 </div>

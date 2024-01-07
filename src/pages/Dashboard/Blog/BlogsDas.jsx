@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { Table } from 'reactstrap';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
-
 import { baseUrl } from '../../baseurl/baseUrl.js';
-
 import SkeletonLoader from '../../../components/SkeletonLoader/SkeletonLoader.jsx';
 import useAllNews from '../../../hooks/useAllNews.jsx';
 
@@ -34,7 +32,7 @@ const BlogsDas = () => {
                 cancelButtonText: 'Cancel',
             }); setIsSubmitting(false)
             if (result.isConfirmed) {
-                const response = await fetch(`${baseUrl}/news/${id}`, {
+                const response = await fetch(`${baseUrl}/blog/${id}`, {
                     method: 'DELETE',
                 });
 

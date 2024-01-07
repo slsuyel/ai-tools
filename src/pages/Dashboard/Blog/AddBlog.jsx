@@ -7,6 +7,7 @@ import 'react-quill/dist/quill.snow.css';
 // import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { baseUrl } from '../../baseurl/baseUrl.js';
+import axios from 'axios';
 
 const AddBlog = () => {
     // const navigate = useNavigate();
@@ -58,20 +59,23 @@ const AddBlog = () => {
             const formData = new FormData();
             formData.append('image', selectedImage);
             try {
-                const response = await fetch(`${baseUrl}/upload`, {
-                    method: 'POST',
-                    body: formData,
+                const imgbbResponse = await axios.post('https://api.imgbb.com/1/upload', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                    params: {
+                        key: import.meta.env.VITE_IMGBB_API_KEY,
+                    },
                 });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    console.log(data.imageUrl);
-                    bannerUrl = data.imageUrl;
+                if (imgbbResponse.data.status === 200) {
+                    console.log(imgbbResponse.data.data.url);
+                    bannerUrl = imgbbResponse.data.data.url;
                 } else {
-                    console.error('Error uploading image:', response.status);
+                    console.error('Error uploading image to ImgBB:', imgbbResponse.data.error.message);
                 }
             } catch (error) {
-                console.error('Error uploading image:', error);
+                console.error('Error uploading image to ImgBB:', error);
             }
         }
 
@@ -85,7 +89,7 @@ const AddBlog = () => {
             date: new Date()
         };
         console.log(blogData);
-        fetch(`${baseUrl}/news`, {
+        fetch(`${baseUrl}/blogs`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

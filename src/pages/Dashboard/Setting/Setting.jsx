@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
+import { baseUrl } from '../../baseurl/baseUrl';
+import Swal from 'sweetalert2';
 
 const Setting = () => {
+
     const [formData, setFormData] = useState({
         chatGptApi: '',
         removeBgApi: '',
-        additionalApi1: '',
-        additionalApi2: '',
-        additionalApi3: '',
-        additionalApi4: '',
+        imagebbApi: '',
+        spellChecker: '',
+        urlShortener: '',
         date: new Date().toISOString().split('T')[0],
     });
+
+
+
 
     const handleChange = (e) => {
         setFormData({
@@ -22,28 +27,52 @@ const Setting = () => {
         e.preventDefault();
         console.log('Form submitted:', formData);
 
+        fetch(`${baseUrl}/api`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire(
+                        'Success!',
+                        'News Added successfully!',
+                        'success'
+                    );
+                } else {
+                    Swal.fire(
+                        'Success!',
+                        'Success',
+                        'error'
+                    );
+                }
+            })
+
     };
 
     return (
         <div className='content-wrapper'>
             <div className='content-header'>
-
                 <form onSubmit={handleSubmit} className='row'>
-
                     <div className='col-md-4 mb-3'>
-                        <label htmlFor="chatGptApi">ChatGpt API -Last update (02/03/2023) </label>
+                        <label htmlFor="chatGptApi">ChatGPT API </label>
                         <input
                             type="text"
                             className="form-control"
                             id="chatGptApi"
+
                             value={formData.chatGptApi}
                             onChange={handleChange}
                         />
                     </div>
 
                     <div className='col-md-4 mb-3'>
-                        <label htmlFor="removeBgApi">Remove BG API -Last update (02/03/2023) </label>
+                        <label htmlFor="removeBgApi">Remove BG API </label>
                         <input
+
                             type="text"
                             className="form-control"
                             id="removeBgApi"
@@ -53,45 +82,33 @@ const Setting = () => {
                     </div>
 
                     <div className='col-md-4 mb-3'>
-                        <label htmlFor="additionalApi1">Additional API 1 -Last update (02/03/2023) </label>
+                        <label htmlFor="imagebbApi">ImageBB API </label>
                         <input
                             type="text"
                             className="form-control"
-                            id="additionalApi1"
-                            value={formData.additionalApi1}
+                            id="imagebbApi"
+                            value={formData.imagebbApi}
                             onChange={handleChange}
                         />
                     </div>
 
                     <div className='col-md-4 mb-3'>
-                        <label htmlFor="additionalApi2">Additional API 2 -Last update (02/03/2023) </label>
+                        <label htmlFor="spellChecker">Spell Checker API </label>
                         <input
                             type="text"
                             className="form-control"
-                            id="additionalApi2"
-                            value={formData.additionalApi2}
+                            id="spellChecker"
+                            value={formData.spellChecker}
                             onChange={handleChange}
                         />
                     </div>
-
                     <div className='col-md-4 mb-3'>
-                        <label htmlFor="additionalApi3">Additional API 3 -Last update (02/03/2023) </label>
+                        <label htmlFor="urlShortener">url Shortener API </label>
                         <input
                             type="text"
                             className="form-control"
-                            id="additionalApi3"
-                            value={formData.additionalApi3}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    <div className='col-md-4 mb-3'>
-                        <label htmlFor="additionalApi4">Additional API 4 -Last update (02/03/2023) </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="additionalApi4"
-                            value={formData.additionalApi4}
+                            id="urlShortener"
+                            value={formData.urlShortener}
                             onChange={handleChange}
                         />
                     </div>
@@ -99,9 +116,7 @@ const Setting = () => {
                     <div className='col-md-12'>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
-
                 </form>
-
             </div>
         </div>
     );

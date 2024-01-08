@@ -1,36 +1,45 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { baseUrl } from './../baseurl/baseUrl';
 
 const AdminLogin = () => {
     const navigate = useNavigate();
-    const [username, setUsername] = useState('');
+    const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    /* const API_KEY = import.meta.env.VITE_CHAT_GPT_APIKEY; */
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (username === import.meta.env.VITE_LOGIN_EMAIL && password === import.meta.env.VITE_LOGIN_PASS) {
-            localStorage.setItem("userToken", import.meta.env.VITE_USER_TOKEN)
-            setIsAuthenticated(true);
-        } else {
-            navigate('/login')
-            console.log('Invalid credentials');
+
+        try {
+            const response = await fetch(`${baseUrl}/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userName, password }),
+            });
+
+            if (response.ok) {
+                const data = await response.json(); // Parse the JSON response
+                localStorage.setItem('userToken', data.token);
+
+                navigate('/dashboard');
+                setUserName('');
+                setPassword('');
+            } else {
+                console.error('Authentication failed');
+            }
+        } catch (error) {
+            console.error('Error during authentication:', error);
         }
-        setUsername('');
-        setPassword('');
     };
 
-    if (isAuthenticated) {
-        navigate('/dashboard')
-        console.log('Redirect to private route');
-    }
+
 
     return (
         <div data-aos="fade-left" className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6">
                     <div className="bg-gradient bg-transparent card text-white">
-                        <div className="card-header">Login</div>
+                        <div className="card-header text-center">AdminLogin</div>
                         <div className="card-body">
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
@@ -41,9 +50,9 @@ const AdminLogin = () => {
                                         style={{ backgroundColor: '#18127c4f' }}
                                         type="text"
                                         className=" form-control text-warning"
-                                        id="username"
-                                        value={username}
-                                        onChange={(e) => setUsername(e.target.value)}
+                                        id="userName"
+                                        value={userName}
+                                        onChange={(e) => setUserName(e.target.value)}
                                     />
                                 </div>
                                 <div className="mb-3">

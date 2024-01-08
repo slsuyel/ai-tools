@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import Breadcrumb from '../../../../components/Breadcrumb';
+import useApiHook from '../../../../hooks/useApiHook';
 
 export default function BackgroundRemover() {
+    const { apiKey, } = useApiHook('removeBgApi');
+
+
     const [bgRemove, setBgRemove] = useState(null);
     const [upImg, setUpImg] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -14,7 +18,7 @@ export default function BackgroundRemover() {
 
     const handleRemoveBackground = async () => {
         setLoading(true);
-        const apiKey = import.meta.env.VITE_REMOVE_BG_APIKEY;
+        // const apiKey = import.meta.env.VITE_REMOVE_BG_APIKEY;
         const apiUrl = 'https://api.remove.bg/v1.0/removebg';
 
         const formData = new FormData();

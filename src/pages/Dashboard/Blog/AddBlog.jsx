@@ -8,9 +8,11 @@ import 'react-quill/dist/quill.snow.css';
 import Swal from 'sweetalert2';
 import { baseUrl } from '../../baseurl/baseUrl.js';
 import axios from 'axios';
+import useApiHook from '../../../hooks/useApiHook.jsx';
 
 const AddBlog = () => {
-    // const navigate = useNavigate();
+    const { apiKey, } = useApiHook('imagebbApi');
+
     const [selectedImage, setSelectedImage] = useState(null);
 
     const [selectedCategories, setSelectedCategories] = useState([]);
@@ -64,7 +66,7 @@ const AddBlog = () => {
                         'Content-Type': 'multipart/form-data',
                     },
                     params: {
-                        key: import.meta.env.VITE_IMGBB_API_KEY,
+                        key: apiKey,
                     },
                 });
 

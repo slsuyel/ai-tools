@@ -1,14 +1,18 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
+import useApiHook from '../../hooks/useApiHook';
 
-const API_KEY = import.meta.env.VITE_CHAT_GPT_APIKEY;
+// const API_KEY = import.meta.env.VITE_CHAT_GPT_APIKEY;
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
     "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
 }
 
 function ChatBoat() {
+    const { apiKey, loading, } = useApiHook('chatGptApi');
+
     const [messages, setMessages] = useState([
         {
             message: "Hello, I'm ChatGPT! Ask me anything!",
@@ -51,9 +55,6 @@ function ChatBoat() {
         });
 
 
-        // Get the request body set up with the model we plan to use
-        // and the messages which we formatted above. We add a system message in the front to'
-        // determine how we want chatGPT to act. 
         const apiRequestBody = {
             "model": "gpt-3.5-turbo",
             "messages": [
@@ -66,7 +67,7 @@ function ChatBoat() {
             {
                 method: "POST",
                 headers: {
-                    "Authorization": "Bearer " + API_KEY,
+                    "Authorization": "Bearer " + apiKey,
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(apiRequestBody)

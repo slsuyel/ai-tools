@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Breadcrumb from '../../../../components/Breadcrumb';
+import useApiHook from '../../../../hooks/useApiHook';
 
 const SpellCheckerPage = () => {
     const [inputText, setInputText] = useState('');
     const [corrections, setCorrections] = useState([]);
     const [loading, setLoading] = useState(false);
-    const apiKey = import.meta.env.VITE_SPELL_CHECK_APIKEY;
-
+    const { apiKey, } = useApiHook('spellChecker');
     const handleInputChange = (event) => {
         const inputValue = event.target.value;
         setInputText(inputValue)

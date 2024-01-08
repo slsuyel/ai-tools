@@ -1,122 +1,77 @@
 import React, { useState } from 'react';
-import { baseUrl } from '../../baseurl/baseUrl';
-import Swal from 'sweetalert2';
 
 const Setting = () => {
-
-    const [formData, setFormData] = useState({
-        chatGptApi: '',
-        removeBgApi: '',
-        imagebbApi: '',
-        spellChecker: '',
-        urlShortener: '',
-        date: new Date().toISOString().split('T')[0],
-    });
-
-
-
+    const [selectedApi, setSelectedApi] = useState('');
+    const [formData, setFormData] = useState({});
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.id]: e.target.value,
-        });
+        setFormData({ ...formData, [selectedApi]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
+    const handleApiChange = (e) => {
+        setSelectedApi(e.target.value);
+    };
 
-        fetch(`${baseUrl}/api`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    Swal.fire(
-                        'Success!',
-                        'News Added successfully!',
-                        'success'
-                    );
-                } else {
-                    Swal.fire(
-                        'Success!',
-                        'Success',
-                        'error'
-                    );
-                }
+    const handleSave = () => {
+        if (selectedApi && formData[selectedApi]) {
+
+            const apiUrl = 'http://localhost:3000/saveData';
+            const requestData = { selectedApi, value: formData[selectedApi] };
+            console.log(requestData);
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData),
             })
-
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        }
     };
+
 
     return (
         <div className='content-wrapper'>
             <div className='content-header'>
-                <form onSubmit={handleSubmit} className='row'>
+                <div className='row'>
                     <div className='col-md-4 mb-3'>
-                        <label htmlFor="chatGptApi">ChatGPT API </label>
-                        <input
-                            type="text"
+                        <label htmlFor="apiSelector">Select API</label>
+                        <select
                             className="form-control"
-                            id="chatGptApi"
-
-                            value={formData.chatGptApi}
-                            onChange={handleChange}
-                        />
+                            id="apiSelector"
+                            onChange={handleApiChange}
+                            value={selectedApi}
+                        >
+                            <option value="">Select an API</option>
+                            <option value="chatGptApi">ChatGPT API</option>
+                            <option value="removeBgApi">Remove BG API</option>
+                            <option value="imagebbApi">ImageBB API</option>
+                            <option value="spellChecker">Spell Checker API</option>
+                            <option value="urlShortener">URL Shortener API</option>
+                        </select>
                     </div>
 
-                    <div className='col-md-4 mb-3'>
-                        <label htmlFor="removeBgApi">Remove BG API </label>
-                        <input
-
-                            type="text"
-                            className="form-control"
-                            id="removeBgApi"
-                            value={formData.removeBgApi}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    <div className='col-md-4 mb-3'>
-                        <label htmlFor="imagebbApi">ImageBB API </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="imagebbApi"
-                            value={formData.imagebbApi}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    <div className='col-md-4 mb-3'>
-                        <label htmlFor="spellChecker">Spell Checker API </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="spellChecker"
-                            value={formData.spellChecker}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className='col-md-4 mb-3'>
-                        <label htmlFor="urlShortener">url Shortener API </label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="urlShortener"
-                            value={formData.urlShortener}
-                            onChange={handleChange}
-                        />
-                    </div>
+                    {selectedApi && (
+                        <div className='col-md-4 mb-3'>
+                            <label htmlFor={selectedApi}>{`${selectedApi} Value`}</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id={selectedApi}
+                                value={formData[selectedApi] || ''}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    )}
 
                     <div className='col-md-12'>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="button" className="btn btn-primary" onClick={handleSave}>
+                            Save
+                        </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     );

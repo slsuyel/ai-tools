@@ -17,6 +17,7 @@ import LanguageTranslate from '../pages/Category/LanguageTools/LanguageTranslate
 import SpellCheckerPage from '../pages/Category/LanguageTools/SpellChecker/SpellCheckerPage';
 import ImageToTextPage from '../pages/Category/FileTools/ImageToTextPage';
 import RandomImage from './../pages/Category/RandomGenerators/RandomImage/RandomImage';
+import QRCodeScanner from '../pages/Category/TechGadgetsTools/QRCodeScanner/QRCodeScanner';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -42,29 +43,31 @@ const ToolsLayout = () => {
                                 <BmiCalculator /> :
                                 path == 'gpa-calculator' ?
                                     <GPACalculator /> :
-                                    path == 'currency-converter' ?
-                                        <CurrencyConverter /> :
-                                        path == 'bkash-cash-out-charge' ?
-                                            <BkashCashOutCharge /> :
-                                            path == 'nagad-cash-out-charge' ?
-                                                <NagadCal /> :
-                                                path == 'url-shortner' ?
-                                                    <UrlShortener /> :
-                                                    path == 'qr-code-generator' ?
-                                                        <QRCodeGenerator /> :
-                                                        path == 'random-password-generator' ?
-                                                            <RrandomPasswordGenerator /> :
-                                                            path == 'language-translate' ?
-                                                                <LanguageTranslate /> :
-                                                                path == 'spell-checker' ?
-                                                                    <SpellCheckerPage /> :
-                                                                    path == 'image-to-text' ?
-                                                                        <ImageToTextPage /> :
-                                                                        path == 'images-generator' ?
-                                                                            <RandomImage /> :
+                                    path == 'qr-code-scanner' ?
+                                        <QRCodeScanner /> :
+                                        path == 'currency-converter' ?
+                                            <CurrencyConverter /> :
+                                            path == 'bkash-cash-out-charge' ?
+                                                <BkashCashOutCharge /> :
+                                                path == 'nagad-cash-out-charge' ?
+                                                    <NagadCal /> :
+                                                    path == 'url-shortner' ?
+                                                        <UrlShortener /> :
+                                                        path == 'qr-code-generator' ?
+                                                            <QRCodeGenerator /> :
+                                                            path == 'random-password-generator' ?
+                                                                <RrandomPasswordGenerator /> :
+                                                                path == 'language-translate' ?
+                                                                    <LanguageTranslate /> :
+                                                                    path == 'spell-checker' ?
+                                                                        <SpellCheckerPage /> :
+                                                                        path == 'image-to-text' ?
+                                                                            <ImageToTextPage /> :
+                                                                            path == 'images-generator' ?
+                                                                                <RandomImage /> :
 
 
-                                                                            <NotFound />
+                                                                                <NotFound />
                 }
             </div>
 

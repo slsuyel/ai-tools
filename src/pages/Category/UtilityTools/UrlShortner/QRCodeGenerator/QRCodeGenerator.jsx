@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import qrLoding from '../../../../../assets/images/qr-scanning.gif'
+import { Link } from 'react-router-dom';
 
 function QRCodeGenerator() {
     const [inputValue, setInputValue] = useState('');
@@ -85,6 +86,14 @@ function QRCodeGenerator() {
                 </div>
 
             </div>
+
+            <div className="bg-gradient mt-3 py-3 rounded text-center">
+                <Link to="/coding-tools/qr-code-scanner" className="tool-btn">
+                    <i className="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>QR Code Scanner
+                </Link>
+            </div>
+
+
         </div>
     );
 }

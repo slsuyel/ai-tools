@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import QRCodeGenerator from '../../UtilityTools/UrlShortner/QRCodeGenerator/QRCodeGenerator';
 
 const QRCodeScanner = () => {
     const [qrCodeData, setQRCodeData] = useState('');
@@ -31,21 +32,16 @@ const QRCodeScanner = () => {
         }
     };
 
-    const generateBlobUrl = () => {
-        if (qrCodeData) {
-            const blob = new Blob([qrCodeData], { type: 'text/plain' });
-            return URL.createObjectURL(blob);
-        }
-        return '';
-    };
+
 
     return (
         <div className="container mt-5">
             <div className="row justify-content-center">
-                <div className="col-md-6">
-                    <div className="card text-white bg-dark">
+                <div className="col-md-10 bg-gradient p-3 rounded">
+                    <div className=" text-white bg-gradient  p-3 rounded">
                         <div className="card-body">
-                            <h5 className="card-title">QR Code Scanner</h5>
+                            <h5 className="card-title fs-2 text-center w-100">QR Code Scanner</h5>
+
                             <div className="form-group">
                                 <label htmlFor="fileInput" className="form-label">Upload QR Code Image:</label>
                                 <input
@@ -57,16 +53,19 @@ const QRCodeScanner = () => {
                                 />
                             </div>
                             <button className="btn btn-primary" onClick={fetchQRCodeData}>Scan QR Code</button>
-                            {qrCodeData && (
-                                <div className="mt-3 card">
-                                    <p className="card-text">QR Code Data:</p>
-                                    <pre>{qrCodeData}</pre>
-                                    <a href={generateBlobUrl()} target="_blank" rel="noopener noreferrer" className="btn btn-secondary mt-2">Download as Blob</a>
-                                </div>
-                            )}
+
+                            <div className="mt-3 card">
+                                <p className="card-text mt-2 text-center text-primary">QR Code Data:</p>
+                                <pre>{qrCodeData ? qrCodeData : ''}</pre>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
+
+
+                <QRCodeGenerator />
 
 
 

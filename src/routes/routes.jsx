@@ -19,6 +19,8 @@ import DashHome from "../pages/Dashboard/Dash-Home/DashHome";
 import AddBlog from "../pages/Dashboard/Blog/AddBlog";
 import BlogsDas from "../pages/Dashboard/Blog/BlogsDas";
 import Setting from "../pages/Dashboard/Setting/Setting";
+import PrivateRoute from "./PrivateRoute";
+import AdminLogin from "../pages/Auth/AdminLogin";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +40,10 @@ export const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <LoginPage />,
+            },
+            {
+                path: "/admin",
+                element: <AdminLogin />,
             },
 
             {
@@ -79,7 +85,7 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <WithNavbar />,
+        element: <PrivateRoute><WithNavbar /></PrivateRoute>,
         children: [
             {
                 path: '',

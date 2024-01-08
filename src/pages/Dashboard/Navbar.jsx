@@ -4,12 +4,6 @@ import { Button } from "reactstrap";
 
 export default function Navbar() {
 
-  // const navigate = useNavigate()
-  // const { logOut } = useContext(AuthContext)
-  // const handleLogOut = async () => {
-  //   logOut()
-  //   navigate('/signin')
-  // }
 
   return (
     <nav className="main-header navbar navbar-expand navbar-white navbar-light">
@@ -29,7 +23,7 @@ export default function Navbar() {
           <div className="dropdown-menu dropdown-menu-sm dropdown-menu-right px-2">
             <span className="dropdown-item text-danger">Hello, </span>
             <span className="dropdown-item">Admin</span>
-            <Button className="dropdown-item">
+            <Button className="dropdown-item" onClick={() => localStorage.removeItem('userToken')}>
               <i className="fas fa-sign-out-alt mr-2"></i> Log out
             </Button>
           </div>

@@ -84,7 +84,7 @@ const Header = () => {
                         ))}
                     </Nav>
 
-                    <div className="align-items-center d-flex">
+                    <div className="align-items-center d-flex mt-1">
                         <div className=''>
                             <input
                                 type="search"

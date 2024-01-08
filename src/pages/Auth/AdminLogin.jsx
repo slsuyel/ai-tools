@@ -1,12 +1,29 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+const AdminLogin = () => {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    /* const API_KEY = import.meta.env.VITE_CHAT_GPT_APIKEY; */
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('username/password wrong')
+        if (username === import.meta.env.VITE_LOGIN_EMAIL && password === import.meta.env.VITE_LOGIN_PASS) {
+            localStorage.setItem("userToken", import.meta.env.VITE_USER_TOKEN)
+            setIsAuthenticated(true);
+        } else {
+            navigate('/login')
+            console.log('Invalid credentials');
+        }
+        setUsername('');
+        setPassword('');
     };
+
+    if (isAuthenticated) {
+        navigate('/dashboard')
+        console.log('Redirect to private route');
+    }
 
     return (
         <div data-aos="fade-left" className="container mt-5">
@@ -56,4 +73,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default AdminLogin;

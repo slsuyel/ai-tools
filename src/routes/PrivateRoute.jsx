@@ -1,21 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useContext } from "react";
-
 import { Navigate, useLocation } from "react-router";
-import { AuthContext } from "../Providers/AuthProviders";
-import Loader from "../utilities/Loader";
 
 const PrivateRoute = ({ children }) => {
-    const { user, loading } = useContext(AuthContext);
     const location = useLocation();
-    // console.log(user);
-    if (loading) {
-        return <Loader />
+    const isAuthenticated = localStorage.getItem("userToken") === import.meta.env.VITE_USER_TOKEN;
+
+    if (!isAuthenticated) {
+        return <Navigate to="/login" state={{ from: location }} replace />;
     }
-    if (user) {
-        return children;
-    }
-    return <Navigate to="/signin" state={{ from: location }} replace></Navigate>
+
+    return <>{children}</>;
 };
 
 export default PrivateRoute;

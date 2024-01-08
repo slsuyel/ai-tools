@@ -11,7 +11,7 @@ const Calculator = () => {
 
             <Breadcrumb title={'Calculator'} description={'Your Best online Calculator'} />
 
-            <div className='col-md-6 mx-auto my-2'>
+            <div className='col-md-8 mx-auto my-2'>
                 <ScientificCalculator />
             </div>
         </div>

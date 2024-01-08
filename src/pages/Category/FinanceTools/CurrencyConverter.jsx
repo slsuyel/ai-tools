@@ -28,7 +28,7 @@ const CurrencyConverter = () => {
 
             <Breadcrumb title={'currency-converter'} description={'Convert currency online '} />
 
-            <div className=" mx-auto border  rounded-lg p-5 ">
+            <div className=" mx-auto border  rounded-lg p-2">
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();

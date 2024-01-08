@@ -90,8 +90,8 @@
                 "slug": "url-shortner"
             },
             {
-                "name": "QR Code Generator",
-                "slug": "qr-code-generator"
+                "name": "QR Code",
+                "slug": "qr-code-scanner"
             },
             {
                 "name": "Code Snippet Repository",
@@ -304,8 +304,8 @@
                 "slug": "internet-speed-test"
             },
             {
-                "name": "QR Code Scanner",
-                "slug": "qr-code-scanner"
+                "name": "QR Code",
+                "slug": "qr-code-generator"
             }
         ]
     },

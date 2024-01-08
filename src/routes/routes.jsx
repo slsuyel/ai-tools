@@ -21,6 +21,7 @@ import BlogsDas from "../pages/Dashboard/Blog/BlogsDas";
 import Setting from "../pages/Dashboard/Setting/Setting";
 import PrivateRoute from "./PrivateRoute";
 import AdminLogin from "../pages/Auth/AdminLogin";
+import SingleNews from "../pages/Home/Blogs/SingleNews/SingleNews";
 
 export const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
             {
                 path: "/blog",
                 element: <Blogs />,
+            },
+            {
+                path: "/blog/:id",
+                element: <SingleNews />,
             },
             {
                 path: "/login",

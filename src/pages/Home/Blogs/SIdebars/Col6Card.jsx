@@ -19,7 +19,7 @@ const Col6Card = () => {
         <div className='col-md-6 py-1 rounded' style={{ background: '#353131' }}>
             <div className='row mx-auto w-100'>
                 <div className="col-md-6 p-0">
-                    <a href="" className='text-decoration-none '>
+                    <Link to={`/blog/${allNews[0]._id}`} className='text-decoration-none '>
                         <div className="img-contain rounded-1">
                             <img
                                 src={allNews[0]?.banner}
@@ -39,7 +39,7 @@ const Col6Card = () => {
 
 
                         </div>
-                    </a>
+                    </Link>
 
 
                 </div>
@@ -48,7 +48,7 @@ const Col6Card = () => {
 
                     {
                         randomFourNews.map((news) => <div key={news._id} className='col-md-6'>
-                            <Link to='/news/12' className='text-decoration-none '>
+                            <Link to={`/blog/${news._id}`} className='text-decoration-none '>
                                 <img src={news.banner} alt="" className='img-fluid' />
                                 <p className='p-title'>  {news.title}</p></Link>
                         </div>

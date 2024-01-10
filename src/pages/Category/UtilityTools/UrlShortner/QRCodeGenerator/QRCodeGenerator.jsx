@@ -36,7 +36,7 @@ function QRCodeGenerator() {
                                     Wrie Here  your Text!
                                 </h2>
                                 <textarea value={inputValue}
-                                    onChange={(e) => setInputValue(e.target.value)} name="" id="" cols="43" rows="13">
+                                    onChange={(e) => setInputValue(e.target.value)} name="" id="" cols="37" rows="13">
 
                                 </textarea>
                             </div>

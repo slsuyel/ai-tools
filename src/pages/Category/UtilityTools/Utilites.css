@@ -29,3 +29,15 @@
 .form-select:focus {
     box-shadow: none !important;
 }
+
+.color-pick {
+
+    width: 43px;
+    height: 31px;
+    border: 0;
+
+}
+
+.colorpick-eyedropper-input-trigger {
+    display: none;
+}

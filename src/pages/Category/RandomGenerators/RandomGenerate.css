@@ -1,3 +1,10 @@
+@import url('https://fonts.maateen.me/apona-lohit/font.css');
+
+* {
+    font-family: 'AponaLohit', sans-serif;
+
+}
+
 .label-reload {
     position: absolute;
     top: 6px;

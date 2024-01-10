@@ -10,6 +10,7 @@ const Col6Card = () => {
     const randomFourNews = [...allNews].sort(() => Math.random() - 0.5).slice(0, 6);
 
 
+
     if (isLoading) {
         return <div className='content-wrapper'>
             <div className='content-header'><SkeletonLoader /></div></div>
@@ -47,7 +48,7 @@ const Col6Card = () => {
                 <div className='col-md-6 mx-auto row'>
 
                     {
-                        randomFourNews.map((news) => <div key={news._id} className='col-md-6'>
+                        randomFourNews.slice(0, 4).map((news) => <div key={news._id} className='col-md-6'>
                             <Link to={`/blog/${news._id}`} className='text-decoration-none '>
                                 <img src={news.banner} alt="" className='img-fluid' />
                                 <p className='p-title'>  {news.title}</p></Link>

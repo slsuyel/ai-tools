@@ -12,7 +12,7 @@ const ChatControl = () => {
         <>
             <div>
                 <button
-                    className={`bg-transparent border-0 chat-img floating-btn`}
+                    className={`${chatOpen ? 'd-none' : ''} bg-transparent border-0 chat-img floating-btn`}
                     style={{ position: "fixed", bottom: 41, right: 24 }}
                     onClick={handleChatBtn}>
                     {

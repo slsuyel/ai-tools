@@ -336,6 +336,10 @@
         "slug": "utility-tools",
         "tools": [
             {
+                "name": "WhatsApp links | Walink",
+                "slug": "create-whatsapp-links-walink"
+            },
+            {
                 "name": "Unit Converter",
                 "slug": "unit-converter"
             },

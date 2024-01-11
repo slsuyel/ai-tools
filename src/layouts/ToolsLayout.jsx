@@ -25,6 +25,8 @@ import ColorContrast from '../pages/Category/UtilityTools/ColorContrast';
 import TextSummarizer from '../pages/Category/LanguageTools/TextSummarizer/TextSummarizer';
 import InternetSpeed from '../pages/Category/TechGadgetsTools/InternetSpeed/InternetSpeed';
 import HashtagGenerator from '../pages/Category/SocialMediaTools/HashtagGenerator/HashtagGenerator';
+import WorldClock from '../pages/Category/TimeDateTools/WorldClock';
+import TimeZoneConvert from '../pages/Category/TimeDateTools/TimeZoneConvert';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -46,49 +48,53 @@ const ToolsLayout = () => {
                         <AgeCalculator /> :
                         path == 'calculator' ?
                             <Calculator /> :
-                            path == 'hashtag-generator' ?
-                                <HashtagGenerator /> :
-                                path == 'bmi-calculator' ?
-                                    <BmiCalculator /> :
-                                    path == 'text-summarizer' ?
-                                        <TextSummarizer /> :
-                                        path == 'gpa-calculator' ?
-                                            <GPACalculator /> :
-                                            path == 'name-generator' ?
-                                                <NameGenerator /> :
-                                                path == 'qr-code-scanner' ?
-                                                    <QRCodeScanner /> :
-                                                    path == 'regex-tester' ?
-                                                        <RegexTester /> :
-                                                        path == 'internet-speed-test' ?
-                                                            <InternetSpeed /> :
-                                                            path == 'color-contrast-checker' ?
-                                                                <ColorContrast /> :
-                                                                path == 'create-whatsapp-links-walink' ?
-                                                                    <Whatsapp /> :
-                                                                    path == 'currency-converter' ?
-                                                                        <CurrencyConverter /> :
-                                                                        path == 'bkash-cash-out-charge' ?
-                                                                            <BkashCashOutCharge /> :
-                                                                            path == 'nagad-cash-out-charge' ?
-                                                                                <NagadCal /> :
-                                                                                path == 'url-shortner' ?
-                                                                                    <UrlShortener /> :
-                                                                                    path == 'qr-code-generator' ?
-                                                                                        <QRCodeGenerator /> :
-                                                                                        path == 'random-password-generator' ?
-                                                                                            <RrandomPasswordGenerator /> :
-                                                                                            path == 'language-translate' ?
-                                                                                                <LanguageTranslate /> :
-                                                                                                path == 'spell-checker' ?
-                                                                                                    <SpellCheckerPage /> :
-                                                                                                    path == 'image-to-text' ?
-                                                                                                        <ImageToTextPage /> :
-                                                                                                        path == 'images-generator' ?
-                                                                                                            <RandomImage /> :
+                            path == 'world-clock' ?
+                                <WorldClock /> :
+                                path == 'time-zone-converter' ?
+                                    <TimeZoneConvert /> :
+                                    path == 'hashtag-generator' ?
+                                        <HashtagGenerator /> :
+                                        path == 'bmi-calculator' ?
+                                            <BmiCalculator /> :
+                                            path == 'text-summarizer' ?
+                                                <TextSummarizer /> :
+                                                path == 'gpa-calculator' ?
+                                                    <GPACalculator /> :
+                                                    path == 'name-generator' ?
+                                                        <NameGenerator /> :
+                                                        path == 'qr-code-scanner' ?
+                                                            <QRCodeScanner /> :
+                                                            path == 'regex-tester' ?
+                                                                <RegexTester /> :
+                                                                path == 'internet-speed-test' ?
+                                                                    <InternetSpeed /> :
+                                                                    path == 'color-contrast-checker' ?
+                                                                        <ColorContrast /> :
+                                                                        path == 'create-whatsapp-links-walink' ?
+                                                                            <Whatsapp /> :
+                                                                            path == 'currency-converter' ?
+                                                                                <CurrencyConverter /> :
+                                                                                path == 'bkash-cash-out-charge' ?
+                                                                                    <BkashCashOutCharge /> :
+                                                                                    path == 'nagad-cash-out-charge' ?
+                                                                                        <NagadCal /> :
+                                                                                        path == 'url-shortner' ?
+                                                                                            <UrlShortener /> :
+                                                                                            path == 'qr-code-generator' ?
+                                                                                                <QRCodeGenerator /> :
+                                                                                                path == 'random-password-generator' ?
+                                                                                                    <RrandomPasswordGenerator /> :
+                                                                                                    path == 'language-translate' ?
+                                                                                                        <LanguageTranslate /> :
+                                                                                                        path == 'spell-checker' ?
+                                                                                                            <SpellCheckerPage /> :
+                                                                                                            path == 'image-to-text' ?
+                                                                                                                <ImageToTextPage /> :
+                                                                                                                path == 'images-generator' ?
+                                                                                                                    <RandomImage /> :
 
 
-                                                                                                            <NotFound />
+                                                                                                                    <NotFound />
                 }
             </div>
 

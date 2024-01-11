@@ -1,64 +1,92 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import useApiHook from './../../../hooks/useApiHook';
+import axios from 'axios';
+import { Input, Button, Spinner } from 'reactstrap'; // Assuming you have Spinner component from reactstrap
 
 const ImageToTextPage = () => {
-    const [selectedFile, setSelectedFile] = useState(null);
+    const { apiKey } = useApiHook('imagebbApi');
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [text, setText] = useState('');
+    const [loading, setLoading] = useState(false); // New loader state
 
-    const handleFileChange = (event) => {
-        setSelectedFile(event.target.files[0]);
-    };
+    let imgUrl = '';
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    const handleUpload = async () => {
-        if (selectedFile) {
-            const apiKey = ''; // Replace with your actual API key
-            const apiUrl = 'https://api.ocr.space/parse/image';
-
+        if (selectedImage) {
             const formData = new FormData();
-            formData.append('apikey', apiKey);
-            formData.append('image', selectedFile);
-
-            const options = {
-                method: 'POST',
-                body: formData,
-            };
+            formData.append('image', selectedImage);
 
             try {
-                const response = await fetch(apiUrl, options);
-                const result = await response.json();
+                setLoading(true); // Set loader state to true when submitting
 
-                if (result.OCRExitCode === 1) {
-                    console.error('OCR processing error:', result.ErrorMessage || result.ErrorDetails);
-                    // Handle error, e.g., show an error message to the user
+                const imgbbResponse = await axios.post('https://api.imgbb.com/1/upload', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                    params: {
+                        key: apiKey,
+                    },
+                });
+
+                if (imgbbResponse.data.status === 200) {
+                    console.log(imgbbResponse.data.data.url);
+                    imgUrl = imgbbResponse.data.data.url;
+
+                    if (imgUrl) {
+                        await sendApiRequest(imgUrl);
+                    }
                 } else {
-                    console.log('Parsed Text:', result.ParsedResults[0].ParsedText);
-                    // Handle success, e.g., update state with the result
+                    console.error('Error uploading image to ImgBB:', imgbbResponse.data.error.message);
                 }
             } catch (error) {
-                console.error('Fetch error:', error);
-                // Handle other errors, e.g., show a general error message
+                console.error('Error uploading image to ImgBB:', error);
+            } finally {
+                setLoading(false); // Set loader state back to false after submission
             }
-        } else {
-            alert('Please select an image file.');
         }
     };
 
+    const sendApiRequest = async (imgUrl) => {
+        const myHeaders = new Headers();
+        myHeaders.append("apikey", "LKJO8OBFZMThX2r23EUz1OlvI0ypK7F0");
+
+        const requestOptions = {
+            method: 'GET',
+            redirect: 'follow',
+            headers: myHeaders
+        };
+        const apiUrl = `https://api.apilayer.com/image_to_text/url?url=${imgUrl}`
+
+        try {
+            const response = await fetch(apiUrl, requestOptions);
+            const result = await response.json();
+            console.log(result);
+            setText(result.all_text);
+        } catch (error) {
+            console.error('Fetch error:', error);
+        }
+    };
+
+
     return (
-        <div className="container mt-5">
-            <h1 className="text-center">Image to Text Converter</h1>
-            <div className="row justify-content-center mt-4">
-                <div className="col-md-6">
-                    <div className="form-group">
-                        <label htmlFor="imageInput">Choose an Image File:</label>
-                        <input
-                            type="file"
-                            className="form-control-file"
-                            id="imageInput"
-                            onChange={handleFileChange}
-                        />
-                    </div>
-                    <button className="btn btn-primary" disabled onClick={handleUpload}>
-                        Upload and Convert
-                    </button>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <Input className='border-success-subtle' accept="image/*" name="banner" id="banner" type='file' onChange={(e) => setSelectedImage(e.target.files[0])} required />
+
+
+                <Button color="primary" className='my-2' type="submit">
+                    {loading ? (
+                        <Spinner size="sm" color="light" />
+                    ) : (
+                        'Submit'
+                    )}
+                </Button>
+            </form>
+
+            <div className='card p-5'>
+                <div className={loading ? 'text-muted' : ''}>
+                    text: {loading ? 'Loading...' : text}
                 </div>
             </div>
         </div>

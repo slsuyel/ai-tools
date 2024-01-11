@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import useApiHook from '../../hooks/useApiHook';
@@ -13,14 +13,24 @@ const systemMessage = { //  Explain things like you're talking to a software pro
 function ChatBoat() {
     const { apiKey, loading, } = useApiHook('chatGptApi');
 
-    const [messages, setMessages] = useState([
-        {
-            message: "Hello, I'm ChatGPT! Ask me anything!",
-            sentTime: "just now",
-            sender: "ChatGPT"
-        }
-    ]);
+    const [messages, setMessages] = useState(() => {
+
+        const storedMessages = localStorage.getItem('chatHistory');
+        return storedMessages ? JSON.parse(storedMessages) : [
+            {
+                message: "Hello, I'm Tools Master Ai based on ChatGPT! Ask me anything!",
+                sentTime: "just now",
+                sender: "ChatGPT"
+            }
+        ];
+    });
+
     const [isTyping, setIsTyping] = useState(false);
+
+    useEffect(() => {
+        // Save messages to local storage whenever messages are updated
+        localStorage.setItem('chatHistory', JSON.stringify(messages));
+    }, [messages]);
 
     const handleSend = async (message) => {
         const newMessage = {

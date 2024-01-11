@@ -7,10 +7,10 @@ const Breadcrumb = ({ title, description }) => {
             <nav className='col-md-4' aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                        <Link className='fs-4 title-color text-decoration-underline' to="/"><i className="fa-solid fa-house fa-fw me-1"></i></Link>
+                        <Link className='fs-4 text-white text-decoration-underline' to="/"><i className="fa-solid fa-house fa-fw me-1"></i></Link>
                     </li>
 
-                    <li className="breadcrumb-item active fs-4 title-color" aria-current="page">
+                    <li className="breadcrumb-item active fs-4 text-white" aria-current="page">
                         {title}
                     </li>
                 </ol>

@@ -5,6 +5,7 @@ import { Input, Button, Spinner } from 'reactstrap'; // Assuming you have Spinne
 
 const ImageToTextPage = () => {
     const { apiKey } = useApiHook('imagebbApi');
+    const { apiKey: imagetoText } = useApiHook('spellChecker');
     const [selectedImage, setSelectedImage] = useState(null);
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(false); // New loader state
@@ -30,7 +31,7 @@ const ImageToTextPage = () => {
                 });
 
                 if (imgbbResponse.data.status === 200) {
-                    console.log(imgbbResponse.data.data.url);
+                    // console.log(imgbbResponse.data.data.url);
                     imgUrl = imgbbResponse.data.data.url;
 
                     if (imgUrl) {
@@ -49,7 +50,7 @@ const ImageToTextPage = () => {
 
     const sendApiRequest = async (imgUrl) => {
         const myHeaders = new Headers();
-        myHeaders.append("apikey", "LKJO8OBFZMThX2r23EUz1OlvI0ypK7F0");
+        myHeaders.append("apikey", imagetoText);
 
         const requestOptions = {
             method: 'GET',
@@ -61,7 +62,7 @@ const ImageToTextPage = () => {
         try {
             const response = await fetch(apiUrl, requestOptions);
             const result = await response.json();
-            console.log(result);
+            // console.log(result);
             setText(result.all_text);
         } catch (error) {
             console.error('Fetch error:', error);
@@ -75,7 +76,7 @@ const ImageToTextPage = () => {
                 <Input className='border-success-subtle' accept="image/*" name="banner" id="banner" type='file' onChange={(e) => setSelectedImage(e.target.files[0])} required />
 
 
-                <Button color="primary" className='my-2' type="submit">
+                <Button color="primary" disabled={loading} className='my-2' type="submit">
                     {loading ? (
                         <Spinner size="sm" color="light" />
                     ) : (
@@ -86,7 +87,7 @@ const ImageToTextPage = () => {
 
             <div className='card p-5'>
                 <div className={loading ? 'text-muted' : ''}>
-                    text: {loading ? 'Loading...' : text}
+                    <strong> Your Text:</strong> {loading ? 'Loading...' : text}
                 </div>
             </div>
         </div>

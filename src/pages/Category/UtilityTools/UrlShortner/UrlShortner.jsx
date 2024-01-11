@@ -1,60 +1,41 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import React, { useState } from 'react';
+import axios from 'axios';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
-import '../Utilites.css'
-
-function UrlShortener() {
+const UrlShortener = () => {
     const [longURL, setLongUrl] = useState("");
-    const [shortLink, setShortLink] = useState({});
+    const [shortLink, setShortLink] = useState('');
     const [active, setActive] = useState(false);
     const [copied, setCopied] = useState(true);
+    const [QR, setQR] = useState('');
 
     function handleChange(e) {
         setLongUrl(e.target.value);
     }
 
-    async function handleSubmit(e) {
-        setCopied(!copied)
-        e.preventDefault();
-        await fetch("https://api-ssl.bitly.com/v4/shorten", {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                Authorization: `Bearer b1622c8ab38f699bcf703d31c4873088633172b4`,
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                long_url: longURL,
-                domain: "bit.ly",
-                group_guid: `Bo13gdXENNG`,
-            }),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                const new_link = data.link ? data.link.replace("https://", "") : "";
 
-                fetch(
-                    `https://api-ssl.bitly.com/v4/bitlinks/${new_link}/qr?image_format=png`,
-                    {
-                        mode: "cors",
-                        headers: {
-                            Authorization: `Bearer b1622c8ab38f699bcf703d31c4873088633172b4`,
-                        },
-                    }
-                )
-                    .then((response) => response.json())
-                    .then((result) => {
-                        setShortLink(result);
-                        setActive(true);
-                    });
-            });
-        setLongUrl("");
-    }
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await axios.post('https://ass-server-ten.vercel.app/shorten', { url: longURL });
+            setShortLink(`https://ass-server-ten.vercel.app/${response.data.shortURL}`);
+            setActive(true);
+            setCopied(false);
 
+            setQR(`http://api.qrserver.com/v1/create-qr-code/?data=https://ass-server-ten.vercel.app/${response.data.shortURL}&size=[200]x[200]`)
+
+
+
+        } catch (error) {
+            console.error('Error shortening URL', error);
+        }
+    };
+
+    console.log(shortLink);
     return (
         <div className="col-md-8 mx-auto">
-            <h2 className="text-light">A Simple Bitly Link Shortener</h2>
+            <h2 className="text-light">A Simple  Link Shortener</h2>
             <div>
                 <form className="mt-3" method="post" action="" onSubmit={handleSubmit}>
                     <div className="align-items-center bg-white input-group rounded">
@@ -80,21 +61,21 @@ function UrlShortener() {
             {active ? (
                 <div className="bg-gradient d-flex justify-content-evenly py-3 show_links">
                     <img
-                        src={shortLink.qr_code}
+                        src={QR}
                         width={125}
                         alt="Qr code"
-                        className="qr_img border border-danger"
+                        className="qr_img border border-danger p-1"
                     />
                     <div className="align-items-center d-flex">
                         <div>
                             <h3 className="text-light">Here's your short link...</h3>
                             <span className="align-items-center d-flex gap-3 text-light">
-                                <p className="border mb-0 px-2 py-1 rounded">{shortLink.link}</p>
+                                <p style={{ fontSize: '12px' }} className="border mb-0 px-2 py-1 rounded">{shortLink}</p>
                                 <CopyToClipboard
                                     onCopy={() => {
                                         setCopied(!copied);
                                     }}
-                                    text={shortLink.link}
+                                    text={shortLink}
                                 >
                                     {!copied ? (
                                         <i className="fa-solid fa-copy"></i>
@@ -110,8 +91,8 @@ function UrlShortener() {
                 ""
             )}
         </div>
-
     );
-}
+};
 
 export default UrlShortener;
+

@@ -38,6 +38,7 @@ const TossGenerator = () => {
                         alt={`${result} coin`}
                         className={`img-fluid rounded-circle border border-3 border-secondary ${loading ? 'flip-animation' : ''}`}
                         style={{ width: '300px', height: '300px' }}
+                        draggable={false}
                     />
                 </div>
                 <div className='card col-md-6 rounded text-center my-1 aaaaaaa'>

@@ -100,7 +100,7 @@ const NameGenerator = () => {
             </div>
 
             <div className='card text-center p-4'>
-                <h1>Muslim Baby Boy Name With Bangla Meaning</h1>
+                <h1>Muslim Baby  Name With Bangla Meaning</h1>
                 <h6>This website has huge collection of islamic baby boys name which are modern,unique and also with their meanings.Your given name is the first gift form there parents.So you have to consider when naming your child so that the given name should sound nice, short, and Sweet and also the name should have a pleasant meaning also</h6>
             </div>
 

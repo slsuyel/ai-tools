@@ -18,10 +18,6 @@
             {
                 "name": "GPA Calculator",
                 "slug": "gpa-calculator"
-            },
-            {
-                "name": "Matrix Algebra Calculator",
-                "slug": "matrix-algebra-calculator"
             }
         ]
     },
@@ -40,10 +36,6 @@
             {
                 "name": "Nagad Calculator",
                 "slug": "nagad-cash-out-charge"
-            },
-            {
-                "name": "Budget Planner",
-                "slug": "budget-planner"
             }
         ]
     },
@@ -62,10 +54,6 @@
             {
                 "name": "Remove Background",
                 "slug": "background-remover"
-            },
-            {
-                "name": "Color Palette Generator",
-                "slug": "color-palette-generator"
             }
         ]
     },
@@ -82,20 +70,12 @@
                 "slug": "code-formatter"
             },
             {
-                "name": "Version Control System",
-                "slug": "version-control-system"
-            },
-            {
                 "name": "URL Shortner",
                 "slug": "url-shortner"
             },
             {
                 "name": "QR Code scanner",
                 "slug": "qr-code-scanner"
-            },
-            {
-                "name": "Code Snippet Repository",
-                "slug": "code-snippet-repository"
             }
         ]
     },

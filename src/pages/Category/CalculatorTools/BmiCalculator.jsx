@@ -53,7 +53,7 @@ const BmiCalculator = () => {
         <div className='w-100'>
 
             <Breadcrumb title={'BMI-calculator'} description={'Best online BMI calculator'} />
-            <div className="container ">
+            <div className="container bg-gradient p-2 rounded">
                 <h1 className="text-center text-white mb-4">BMI Calculator</h1>
 
                 <div className="row justify-content-center">

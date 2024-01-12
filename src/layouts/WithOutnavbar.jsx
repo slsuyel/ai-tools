@@ -4,17 +4,12 @@ import Header from '../pages/Shared/Header'
 import Footer from '../pages/Shared/Footer'
 import CategoryCanvas from '../pages/Shared/CategoryCanvas'
 import ChatControl from '../pages/ChatBoat/ChatControl'
-import { incrementVisitorCount, getVisitorCount } from '../utilities/analytics.js';
-import { useEffect } from 'react'
+import VisitorCounter from '../utilities/VisitorCounter'
+
 
 
 export default function WithOutnavbar() {
-  useEffect(() => {
-    incrementVisitorCount();
-  }, []);
 
-  const totalVisitors = getVisitorCount();
-  console.log(totalVisitors);
 
   return (
     <main className='primary-bg'>
@@ -23,6 +18,7 @@ export default function WithOutnavbar() {
       <Outlet />
       <ChatControl />
       <Footer />
+      <VisitorCounter />
     </main>
   )
 }

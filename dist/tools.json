@@ -324,6 +324,10 @@
                 "slug": "unit-converter"
             },
             {
+                "name": "Toss Generator",
+                "slug": "toss-generator"
+            },
+            {
                 "name": "IP Address Converter",
                 "slug": "ip-address-converter"
             },

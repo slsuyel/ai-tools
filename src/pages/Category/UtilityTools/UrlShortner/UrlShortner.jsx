@@ -4,11 +4,13 @@ import axios from 'axios';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 const UrlShortener = () => {
+
     const [longURL, setLongUrl] = useState("");
     const [shortLink, setShortLink] = useState('');
     const [active, setActive] = useState(false);
     const [copied, setCopied] = useState(true);
     const [QR, setQR] = useState('');
+    const baseUrl = 'https://short-tools.vercel.app';
 
     function handleChange(e) {
         setLongUrl(e.target.value);
@@ -17,20 +19,31 @@ const UrlShortener = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        const calculatedExpirationDate = new Date();
+        calculatedExpirationDate.setFullYear(calculatedExpirationDate.getFullYear() + 3);
+
         try {
-            const response = await axios.post('https://ass-server-ten.vercel.app/shorten', { url: longURL });
-            setShortLink(`https://ass-server-ten.vercel.app/${response.data.shortURL}`);
+            const response = await axios.post(`${baseUrl}/shorten`, {
+                longURL,
+                expirationDate: calculatedExpirationDate,
+            });
+
+            const shortURL = `${baseUrl}/${response.data.shortURL}`;
+            setShortLink(shortURL);
             setActive(true);
             setCopied(false);
-
-            setQR(`http://api.qrserver.com/v1/create-qr-code/?data=https://ass-server-ten.vercel.app/${response.data.shortURL}&size=[200]x[200]`)
-
-
-
+            setQR(
+                `http://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(
+                    shortURL
+                )}&size=200x200`
+            );
         } catch (error) {
             console.error('Error shortening URL', error);
         }
     };
+
+
 
     console.log(shortLink);
     return (

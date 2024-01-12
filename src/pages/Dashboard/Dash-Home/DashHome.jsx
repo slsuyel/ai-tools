@@ -1,11 +1,15 @@
+/* eslint-disable no-unused-vars */
 
 // import SalesChart from "./SalesChart";
 
 import { CardSubtitle, Col, Row } from "reactstrap";
+import VisitorCounter from "../../../utilities/VisitorCounter";
+import useAllNews from "../../../hooks/useAllNews";
+import useToolsCategories from "../../../hooks/useToolsCategories";
 
 export default function DashHome() {
-
-
+  const [allNews, refetch,] = useAllNews()
+  const { toolsCategories, } = useToolsCategories()
   return (
     <div className="content-wrapper">
       <div className="content-header">
@@ -22,16 +26,18 @@ export default function DashHome() {
           <div className="bg-primary text-white my-3 p-3 rounded">
             <Row>
               <Col md="4">
-                <h6>Total Students</h6>
-                <h4 className="mb-0 fw-bold">100</h4>
+                <h6>Total Visitors</h6>
+                <h4 className="mb-0 fw-bold">
+                  <VisitorCounter />
+                </h4>
               </Col>
               <Col md="4">
-                <h6>Total Teachers</h6>
-                <h4 className="mb-0 fw-bold">100</h4>
+                <h6>Total Blogs</h6>
+                <h4 className="mb-0 fw-bold">{allNews?.length || 0}</h4>
               </Col>
               <Col md="4">
-                <h6>Total Programs </h6>
-                <h4 className="mb-0 fw-bold">100</h4>
+                <h6>Total Tool Categories </h6>
+                <h4 className="mb-0 fw-bold">{toolsCategories?.length || 0}</h4>
               </Col>
             </Row>
           </div>

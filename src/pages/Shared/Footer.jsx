@@ -2,8 +2,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/tools-master.png';
-
+import useVisitors from '../../hooks/useVisitors';
 const Footer = () => {
+    const visitorCount = useVisitors()
     return (
         <footer className="pt-5 nav-p-bg">
             <div className="container px-4 px-md-3">
@@ -27,15 +28,17 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="col-6 col-lg-3 mb-4">
+                    <div className="col-6 col-lg-3 mb-2">
                         <h5 className="text-white">Others Link:</h5>
                         <ul className="list-unstyled">
                             <li className="mb-2"><Link className='text-decoration-none text-white' to="/">Help & Support</Link></li>
                             <li className="mb-2"><Link className='text-decoration-none text-white' to="/rajshahi-university">Career</Link></li>
                             <li className="mb-2"><Link className='text-decoration-none text-white' to="/rajshahi-university">Terms & conditions</Link></li>
-
-
                         </ul>
+
+                        <div className='font-italic font-monospace text-blue'>
+                            Total Visitors: <strong>{visitorCount + 10000} </strong>
+                        </div>
                     </div>
 
                     <div className=" col-lg-3 mb-3 pt-2">
@@ -55,7 +58,7 @@ const Footer = () => {
                             </a>
                         </div>
                         <div className='mt-4 text-end'>
-                            <h6 className='mb-0 '>Technical support:</h6>
+                            <h6 className='mb-0 text-white'>Design & Dev</h6>
                             <a className='fs-5 ms-3  text-decoration-none text-white' target="_blank" href="https://www.linkedin.com/in/slsuyel">Suyel Haque</a>
                         </div>
                     </div>

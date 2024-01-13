@@ -1,15 +1,15 @@
-/* eslint-disable no-unused-vars */
-
-// import SalesChart from "./SalesChart";
 
 import { CardSubtitle, Col, Row } from "reactstrap";
-import VisitorCounter from "../../../utilities/VisitorCounter";
 import useAllNews from "../../../hooks/useAllNews";
 import useToolsCategories from "../../../hooks/useToolsCategories";
+import useVisitors from "../../../hooks/useVisitors";
 
 export default function DashHome() {
-  const [allNews, refetch,] = useAllNews()
+  const [allNews, ,] = useAllNews()
   const { toolsCategories, } = useToolsCategories()
+
+  const visitorCount = useVisitors()
+  // console.log(visitorCount);
   return (
     <div className="content-wrapper">
       <div className="content-header">
@@ -28,7 +28,7 @@ export default function DashHome() {
               <Col md="4">
                 <h6>Total Visitors</h6>
                 <h4 className="mb-0 fw-bold">
-                  <VisitorCounter />
+                  {visitorCount}
                 </h4>
               </Col>
               <Col md="4">
@@ -85,7 +85,7 @@ export default function DashHome() {
             <div className="col-lg-3">
               <div className="small-box bg-warning">
                 <div className="inner">
-                  <h3>Loding . . .</h3>
+                  <h3>Loading . . .</h3>
                   <p>Today Sell </p>
                 </div>
                 <div className="icon">

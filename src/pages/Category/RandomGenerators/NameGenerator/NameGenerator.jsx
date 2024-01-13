@@ -1,4 +1,6 @@
+
 import React, { useEffect, useState } from 'react';
+
 
 const NameGenerator = () => {
     const [boysNames, setBoysNames] = useState([]);
@@ -16,7 +18,8 @@ const NameGenerator = () => {
                 setFilteredNames(data.boysName);
             })
     }, []);
-
+    console.log(boysNames.length);
+    console.log(girlsNames.length);
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     }
@@ -27,9 +30,8 @@ const NameGenerator = () => {
     }
 
     const handleGenerateName = () => {
-        // Filter names based on input value and gender
         const filtered = gender === 'male' ? boysNames : girlsNames;
-        const regex = new RegExp(inputValue, 'i'); // Case-insensitive search
+        const regex = new RegExp(inputValue, 'i');
         const filteredNames = filtered.filter(name => regex.test(name.name));
         setFilteredNames(filteredNames);
     }
@@ -52,7 +54,7 @@ const NameGenerator = () => {
                         <input
                             type="text"
                             className="form-control"
-                            placeholder='বাংলায় লিখুন'
+                            placeholder='একটি অক্ষর লিখুন'
                             id="nameInput"
                             value={inputValue}
                             onChange={handleInputChange}
@@ -67,7 +69,7 @@ const NameGenerator = () => {
                             checked={gender === 'male'}
                             onChange={handleGenderChange}
                         />
-                        <label className="form-check-label text-white" htmlFor="maleRadio">Male</label>
+                        <label className="form-check-label text-white" htmlFor="maleRadio">ছেলে</label>
                     </div>
                     <div className="form-check form-check-inline">
                         <input
@@ -78,10 +80,10 @@ const NameGenerator = () => {
                             checked={gender === 'female'}
                             onChange={handleGenderChange}
                         />
-                        <label className="text-white form-check-label" htmlFor="femaleRadio">Female</label>
+                        <label className="text-white form-check-label" htmlFor="femaleRadio">মেয়ে</label>
                     </div>
                     <button
-                        className="btn btn-primary"
+                        className="submit-btn my-3"
                         onClick={handleGenerateName}
                     >
                         Generate Names
@@ -89,13 +91,26 @@ const NameGenerator = () => {
                 </div>
                 <div className="col-md-6 card p-2">
                     <h4>Generated Names:</h4>
-                    {getRandomNames().map((name, index) => (
-                        <div key={index} className='d-flex gap-2 justify-content-between ps-2'>
-                            <p><strong>Name:</strong> {name?.name || 'No name available'}</p>
-                            <p><strong>Meaning:</strong> {name?.meaning || 'Meaning not available'}</p>
-                            <hr />
-                        </div>
-                    ))}
+                    <table className="table">
+                        <thead>
+                            <tr >
+                                <th>#</th>
+                                <th>নামঃ</th>
+                                <th>অর্থঃ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {getRandomNames().map((name, index) => (<tr key={index}>
+                                <td >{index + 1}</td>
+                                <td >{name?.name}</td>
+                                <td>{name?.meaning}</td>
+                            </tr>))}
+
+                        </tbody>
+                    </table>
+
+
+
                 </div>
             </div>
 

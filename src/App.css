@@ -2,6 +2,12 @@ body {
   font-family: 'Share Tech', sans-serif !important;
 }
 
+img {
+  max-width: 100% !important;
+  height: auto;
+}
+
+
 .nav-link {
   font-family: 'Share Tech', sans-serif !important;
 }

@@ -1,14 +1,14 @@
 import Select from 'react-select';
-import ReactQuill from 'react-quill';
-
+import ReactQuill, { Quill } from 'react-quill';
+import ImageResize from 'quill-image-resize-module-react';
 import { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import 'react-quill/dist/quill.snow.css';
-// import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { baseUrl } from '../../baseurl/baseUrl.js';
 import axios from 'axios';
 import useApiHook from '../../../hooks/useApiHook.jsx';
+Quill.register('modules/imageResize', ImageResize);
 
 const AddBlog = () => {
     const { apiKey, } = useApiHook('imagebbApi');
@@ -22,6 +22,10 @@ const AddBlog = () => {
     const [content, setContent] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const modules = {
+        imageResize: {
+            parchment: Quill.import('parchment'),
+            // modules: [ 'DisplaySize']
+        },
         toolbar: [
             [{ 'header': '1' }, { 'font': [] }],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }],
@@ -159,7 +163,13 @@ const AddBlog = () => {
                         <Label className='font-monospace fs-5 text-primary' for="content">Content:</Label>
                         <ReactQuill theme="snow"
                             style={{ height: '260px', paddingBottom: '61px' }}
-                            value={content} onChange={setContent} modules={modules} />
+                            value={content}
+                            onChange={setContent}
+                            modules={modules} />
+
+
+
+
                     </FormGroup>
 
                     <Button color="primary" className='' disabled={isSubmitting} type="submit">

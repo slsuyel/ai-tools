@@ -11988,8 +11988,8 @@ const NameGenerator = () => {
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     };
-    console.log(boysNames.length);
-    console.log(girlsNames.length);
+    // console.log(boysNames.length);
+    // console.log(girlsNames.length);
     const handleGenderChange = (event) => {
         setGender(event.target.value);
         setFilteredNames(event.target.value === 'male' ? boysNames : girlsNames);

@@ -262,8 +262,8 @@
                 "slug": "profile-picture-editor"
             },
             {
-                "name": "Caption Inspiration Generator",
-                "slug": "caption-inspiration-generator"
+                "name": "Quotes Generator",
+                "slug": "quotes-generator"
             }
         ]
     },
@@ -308,6 +308,36 @@
             {
                 "name": "World Clock",
                 "slug": "world-clock"
+            }
+        ]
+    },
+    {
+        "category": "Islamic",
+        "slug": "islamic",
+        "tools": [
+            {
+                "name": "Quran",
+                "slug": "quran"
+            },
+            {
+                "name": "Hadith",
+                "slug": "hadith"
+            },
+            {
+                "name": "Namaz",
+                "slug": "namaj"
+            },
+            {
+                "name": "Tafsir",
+                "slug": "tafsir"
+            },
+            {
+                "name": "Islamic History",
+                "slug": "islamic-history"
+            },
+            {
+                "name": "Fiqh",
+                "slug": "fiqh"
             }
         ]
     },

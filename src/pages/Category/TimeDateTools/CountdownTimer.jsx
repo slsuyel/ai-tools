@@ -25,6 +25,7 @@ const CountdownTimer = () => {
         if (targetDate && !timerRunning) {
             setTimerRunning(true);
         }
+        else alert('Select Target Date and Time')
     };
 
     const handleReset = () => {

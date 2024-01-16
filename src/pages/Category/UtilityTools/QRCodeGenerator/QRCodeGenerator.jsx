@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import qrLoding from '../../../../../assets/images/qr-scanning.gif'
+import qrLoding from '../../../../assets/images/qr-scanning.gif'
 import { Link } from 'react-router-dom';
 
 function QRCodeGenerator() {
@@ -10,7 +10,7 @@ function QRCodeGenerator() {
         if (!inputValue) {
             return alert('Your content is empty. Input something.');
         }
-        setQR(`http://api.qrserver.com/v1/create-qr-code/?data=${inputValue}&size=[200]x[200]`);
+        setQR(`https://chart.apis.google.com/chart?cht=qr&chl=${inputValue}&chs=360`);
     };
 
     return (

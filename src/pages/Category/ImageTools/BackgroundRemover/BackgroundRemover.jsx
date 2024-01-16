@@ -4,23 +4,17 @@ import useApiHook from '../../../../hooks/useApiHook';
 
 export default function BackgroundRemover() {
     const { apiKey, } = useApiHook('removeBgApi');
-
-
     const [bgRemove, setBgRemove] = useState(null);
     const [upImg, setUpImg] = useState(null);
     const [loading, setLoading] = useState(false);
-
     const handleChange = (event) => {
         const { type } = event.target;
         const newValue = type === 'file' ? event.target.files[0] : event.target.value;
         setUpImg(newValue);
     };
-
     const handleRemoveBackground = async () => {
         setLoading(true);
-        // const apiKey = import.meta.env.VITE_REMOVE_BG_APIKEY;
         const apiUrl = 'https://api.remove.bg/v1.0/removebg';
-
         const formData = new FormData();
         formData.append('image_file', upImg, upImg.name);
         formData.append('size', 'auto');

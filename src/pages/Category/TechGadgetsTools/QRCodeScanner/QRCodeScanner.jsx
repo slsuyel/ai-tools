@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import QRCodeGenerator from '../../UtilityTools/UrlShortner/QRCodeGenerator/QRCodeGenerator';
+import QRCodeGenerator from '../../UtilityTools/QRCodeGenerator/QRCodeGenerator';
+import Loader from '../../../../components/Loader';
 
 const QRCodeScanner = () => {
     const [qrCodeData, setQRCodeData] = useState('');
     const [file, setFile] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
@@ -14,6 +15,8 @@ const QRCodeScanner = () => {
     const fetchQRCodeData = async () => {
         if (file) {
             try {
+                setLoading(true);
+
                 const formData = new FormData();
                 formData.append('file', file);
 
@@ -23,16 +26,17 @@ const QRCodeScanner = () => {
                 });
 
                 const data = await response.json();
+
                 setQRCodeData(data[0].symbol[0].data);
             } catch (error) {
                 console.error('Error fetching QR code data', error);
+            } finally {
+                setLoading(false);
             }
         } else {
             alert('Please select a file before scanning.');
         }
     };
-
-
 
     return (
         <div className="container mt-5">
@@ -52,26 +56,25 @@ const QRCodeScanner = () => {
                                     onChange={handleFileChange}
                                 />
                             </div>
-                            <button className="btn btn-primary" onClick={fetchQRCodeData}>Scan QR Code</button>
+                            <div className='d-flex justify-content-center'>
+                                <button disabled={loading} className="submit-btn" onClick={fetchQRCodeData}>Scan QR Code</button>
+                            </div>
 
                             <div className="mt-3 card">
                                 <p className="card-text mt-2 text-center text-primary">QR Code Data:</p>
-                                <pre>{qrCodeData ? qrCodeData : ''}</pre>
-
+                                {loading ? (
+                                    <Loader />
+                                ) : (
+                                    <pre>{qrCodeData ? qrCodeData : ''}</pre>
+                                )}
                             </div>
-
                         </div>
                     </div>
                 </div>
 
-
                 <QRCodeGenerator />
-
-
-
-
             </div>
-        </div >
+        </div>
     );
 };
 

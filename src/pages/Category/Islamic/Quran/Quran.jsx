@@ -110,14 +110,14 @@ const Quran = () => {
 
                     <div className='col-md-4 d-flex gap-2 justify-content-center'>
                         <Select
-                            className='text-dark'
+                            className='text-dark w-100'
                             value={selectedOption}
                             onChange={handleChange}
                             options={suraList.map(s => ({ value: s.number, label: `${s.englishName}-${s.number}` }))}
                             isSearchable={true}
                             placeholder="Select a Sura"
                         />
-                        <button className='bg-white border-0 rounded-1' onClick={handleSubmit}>Submit</button>
+                        <button className='bg-white border-0 rounded-1 px-3' onClick={handleSubmit}>Submit</button>
                     </div>
 
 
@@ -126,7 +126,7 @@ const Quran = () => {
 
                 <div>
                     <h5 className='text-center text-decoration-underline pb-2'>بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ </h5>
-
+                    <div className='font-italic text-end text-warning'><span style={{ fontSize: '15px' }}>!! Listening to audio might pose some challenges </span></div>
                     {loader ? <Loader /> : sura.ayahs?.map((ayah, index) => (
                         <div className='row' key={index}>
                             <div className='col-md-9 col-sm-7 my-3'>

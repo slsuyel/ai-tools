@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './components.css'
 const Breadcrumb = ({ title, description }) => {
     return (
-        <div className="align-items-center mb-2 mb-5 mx-auto row text-center w-100">
+        <div className="align-items-center mb-2 mb-5 mx-auto row text-center w-100 ">
             <nav className='col-md-4' aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item">
@@ -26,3 +26,4 @@ const Breadcrumb = ({ title, description }) => {
 };
 
 export default Breadcrumb;
+/* fw-bold mt-5 mt-md-0 py-4 text-center */

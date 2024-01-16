@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import imgGif from '../../../assets/images/Clock.gif'
+import imgPng from '../../../assets/images/Clock.png'
 
 const StopWatch = () => {
     const [isRunning, setIsRunning] = useState(false);
@@ -45,8 +47,9 @@ const StopWatch = () => {
             <h1 className='text-white'>StopWatch</h1>
 
 
-            <div className='card p-3'>
-                <p>{formatTime(time)}</p>
+            <div className='card p-3 '>
+                <div className='align-items-center d-flex gap-3 justify-content-around'>  <div><p className='fs-2 fw-bold mb-0 text-primary'>{formatTime(time)}</p></div>
+                    <div><img src={isRunning ? imgGif : imgPng} width={50} draggable={false} alt="" /></div></div>
             </div>
 
             <div className='d-flex gap-2 justify-content-evenly my-2'>

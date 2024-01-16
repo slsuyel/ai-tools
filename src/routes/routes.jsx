@@ -22,6 +22,8 @@ import Setting from "../pages/Dashboard/Setting/Setting";
 import PrivateRoute from "./PrivateRoute";
 import AdminLogin from "../pages/Auth/AdminLogin";
 import SingleNews from "../pages/Home/Blogs/SingleNews/SingleNews";
+import Hadith from "../pages/Category/Islamic/Hadith/Hadith";
+
 
 export const router = createBrowserRouter([
     {
@@ -85,6 +87,11 @@ export const router = createBrowserRouter([
                 path: ":slug/pdf-to-image",
                 element: <PdfToImage />,
             },
+            {
+                path: ":slug/hadith",
+                element: <Hadith />,
+            },
+
 
 
         ],

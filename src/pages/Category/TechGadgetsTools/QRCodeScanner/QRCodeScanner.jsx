@@ -20,7 +20,7 @@ const QRCodeScanner = () => {
                 const formData = new FormData();
                 formData.append('file', file);
 
-                const response = await fetch('http://api.qrserver.com/v1/read-qr-code/', {
+                const response = await fetch('https://api.qrserver.com/v1/read-qr-code/', {
                     method: 'POST',
                     body: formData,
                 });

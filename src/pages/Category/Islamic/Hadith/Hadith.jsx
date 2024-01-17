@@ -47,11 +47,11 @@ const Hadith = () => {
     const data = hadiths.hadiths.data
 
     return (
-        <div className="container mt-md-0">
+        <div className=" mt-md-0 bg-gradient">
             <h1 className="mt-md-0 mt-5 pt-5 py-3 text-center text-white">Sahih Bukhari Hadiths</h1>
 
 
-            <div>
+            <div className='container'>
 
                 <HadithTable data={data} isLoading={isLoading} />
 

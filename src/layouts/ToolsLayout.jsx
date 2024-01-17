@@ -36,6 +36,10 @@ import Quotes from '../pages/Category/SocialMediaTools/HashtagGenerator/Quotes/Q
 import Quran from '../pages/Category/Islamic/Quran/Quran';
 
 import ProfilePicture from '../pages/Category/SocialMediaTools/HashtagGenerator/ProfilePicture/ProfilePicture';
+import Namaz from '../pages/Category/Islamic/Namaz/Namaz';
+import IslamicDateConversion from '../pages/Category/Islamic/IslamicDateConversion/IslamicDateConversion';
+
+import MyCalendar from '../pages/Category/TimeDateTools/Calendar';
 
 const ToolsLayout = () => {
     const location = useLocation();
@@ -53,74 +57,81 @@ const ToolsLayout = () => {
 
             <div className='col-md-8 pt-3'>
                 {
-                    path == 'profile-picture-editor' ?
-                        <ProfilePicture /> :
+                    path == 'world-calendar' ?
+                        <MyCalendar /> :
 
-                        path == 'quran' ?
-                            <Quran /> :
-                            path == 'toss-generator' ?
-                                <TossGenerator /> :
-                                path == 'quotes-generator' ?
-                                    <Quotes /> :
-                                    path == 'age-calculator' ?
-                                        <AgeCalculator /> :
-                                        path == 'unit-converter' ?
-                                            <UnitConverter /> :
-                                            path == 'random-number-generator' ?
-                                                <RandomNumber /> :
-                                                path == 'date-calculator' ?
-                                                    <DateCalculator /> :
-                                                    path == 'countdown-timer' ?
-                                                        <CountdownTimer /> :
-                                                        path == 'calculator' ?
-                                                            <Calculator /> :
-                                                            path == 'world-clock' ?
-                                                                <WorldClock /> :
-                                                                path == 'time-zone-converter' ?
-                                                                    <TimeZoneConvert /> :
-                                                                    path == 'hashtag-generator' ?
-                                                                        <HashtagGenerator /> :
-                                                                        path == 'bmi-calculator' ?
-                                                                            <BmiCalculator /> :
-                                                                            path == 'text-summarizer' ?
-                                                                                <TextSummarizer /> :
-                                                                                path == 'gpa-calculator' ?
-                                                                                    <GPACalculator /> :
-                                                                                    path == 'name-generator' ?
-                                                                                        <NameGenerator /> :
-                                                                                        path == 'qr-code-scanner' ?
-                                                                                            <QRCodeScanner /> :
-                                                                                            path == 'regex-tester' ?
-                                                                                                <RegexTester /> :
-                                                                                                path == 'internet-speed-test' ?
-                                                                                                    <InternetSpeed /> :
-                                                                                                    path == 'color-contrast-checker' ?
-                                                                                                        <ColorContrast /> :
-                                                                                                        path == 'create-whatsapp-links-walink' ?
-                                                                                                            <Whatsapp /> :
-                                                                                                            path == 'currency-converter' ?
-                                                                                                                <CurrencyConverter /> :
-                                                                                                                path == 'bkash-cash-out-charge' ?
-                                                                                                                    <BkashCashOutCharge /> :
-                                                                                                                    path == 'nagad-cash-out-charge' ?
-                                                                                                                        <NagadCal /> :
-                                                                                                                        path == 'url-shortner' ?
-                                                                                                                            <UrlShortener /> :
-                                                                                                                            path == 'qr-code-generator' ?
-                                                                                                                                <QRCodeGenerator /> :
-                                                                                                                                path == 'random-password-generator' ?
-                                                                                                                                    <RrandomPasswordGenerator /> :
-                                                                                                                                    path == 'language-translate' ?
-                                                                                                                                        <LanguageTranslate /> :
-                                                                                                                                        path == 'spell-checker' ?
-                                                                                                                                            <SpellCheckerPage /> :
-                                                                                                                                            path == 'image-to-text' ?
-                                                                                                                                                <ImageToTextPage /> :
-                                                                                                                                                path == 'images-generator' ?
-                                                                                                                                                    <RandomImage /> :
+                        path == 'namaj' ?
+                            <Namaz /> :
+                            path == 'islamic-date-conversion' ?
+                                <IslamicDateConversion /> :
+                                path == 'profile-picture-editor' ?
+                                    <ProfilePicture /> :
+
+                                    path == 'quran' ?
+                                        <Quran /> :
+                                        path == 'toss-generator' ?
+                                            <TossGenerator /> :
+                                            path == 'quotes-generator' ?
+                                                <Quotes /> :
+                                                path == 'age-calculator' ?
+                                                    <AgeCalculator /> :
+                                                    path == 'unit-converter' ?
+                                                        <UnitConverter /> :
+                                                        path == 'random-number-generator' ?
+                                                            <RandomNumber /> :
+                                                            path == 'date-calculator' ?
+                                                                <DateCalculator /> :
+                                                                path == 'countdown-timer' ?
+                                                                    <CountdownTimer /> :
+                                                                    path == 'calculator' ?
+                                                                        <Calculator /> :
+                                                                        path == 'world-clock' ?
+                                                                            <WorldClock /> :
+                                                                            path == 'time-zone-converter' ?
+                                                                                <TimeZoneConvert /> :
+                                                                                path == 'hashtag-generator' ?
+                                                                                    <HashtagGenerator /> :
+                                                                                    path == 'bmi-calculator' ?
+                                                                                        <BmiCalculator /> :
+                                                                                        path == 'text-summarizer' ?
+                                                                                            <TextSummarizer /> :
+                                                                                            path == 'gpa-calculator' ?
+                                                                                                <GPACalculator /> :
+                                                                                                path == 'name-generator' ?
+                                                                                                    <NameGenerator /> :
+                                                                                                    path == 'qr-code-scanner' ?
+                                                                                                        <QRCodeScanner /> :
+                                                                                                        path == 'regex-tester' ?
+                                                                                                            <RegexTester /> :
+                                                                                                            path == 'internet-speed-test' ?
+                                                                                                                <InternetSpeed /> :
+                                                                                                                path == 'color-contrast-checker' ?
+                                                                                                                    <ColorContrast /> :
+                                                                                                                    path == 'create-whatsapp-links-walink' ?
+                                                                                                                        <Whatsapp /> :
+                                                                                                                        path == 'currency-converter' ?
+                                                                                                                            <CurrencyConverter /> :
+                                                                                                                            path == 'bkash-cash-out-charge' ?
+                                                                                                                                <BkashCashOutCharge /> :
+                                                                                                                                path == 'nagad-cash-out-charge' ?
+                                                                                                                                    <NagadCal /> :
+                                                                                                                                    path == 'url-shortner' ?
+                                                                                                                                        <UrlShortener /> :
+                                                                                                                                        path == 'qr-code-generator' ?
+                                                                                                                                            <QRCodeGenerator /> :
+                                                                                                                                            path == 'random-password-generator' ?
+                                                                                                                                                <RrandomPasswordGenerator /> :
+                                                                                                                                                path == 'language-translate' ?
+                                                                                                                                                    <LanguageTranslate /> :
+                                                                                                                                                    path == 'spell-checker' ?
+                                                                                                                                                        <SpellCheckerPage /> :
+                                                                                                                                                        path == 'image-to-text' ?
+                                                                                                                                                            <ImageToTextPage /> :
+                                                                                                                                                            path == 'images-generator' ?
+                                                                                                                                                                <RandomImage /> :
 
 
-                                                                                                                                                    <NotFound />
+                                                                                                                                                                <NotFound />
                 }
             </div>
 

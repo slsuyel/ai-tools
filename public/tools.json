@@ -132,46 +132,12 @@
         ]
     },
     {
-        "category": "Geometry Tools",
-        "slug": "geometry-tools",
-        "tools": [
-            {
-                "name": "Area and Perimeter Calculator",
-                "slug": "area-perimeter-calculator"
-            },
-            {
-                "name": "Triangle Solver",
-                "slug": "triangle-solver"
-            },
-            {
-                "name": "Circle Properties Calculator",
-                "slug": "circle-properties-calculator"
-            },
-            {
-                "name": "3D Shape Volume Calculator",
-                "slug": "3d-shape-volume-calculator"
-            }
-        ]
-    },
-    {
         "category": "Health Tools",
         "slug": "health-tools",
         "tools": [
             {
                 "name": "BMI Calculator",
                 "slug": "bmi-calculator"
-            },
-            {
-                "name": "Calorie Counter",
-                "slug": "calorie-counter"
-            },
-            {
-                "name": "Sleep Pattern Analyzer",
-                "slug": "sleep-pattern-analyzer"
-            },
-            {
-                "name": "Water Intake Tracker",
-                "slug": "water-intake-tracker"
             }
         ]
     },
@@ -190,10 +156,6 @@
             {
                 "name": "Text Summarizer",
                 "slug": "text-summarizer"
-            },
-            {
-                "name": "Language Learning Assistant",
-                "slug": "language-learning-assistant"
             }
         ]
     },
@@ -216,10 +178,6 @@
             {
                 "name": "Random Number Generator",
                 "slug": "random-number-generator"
-            },
-            {
-                "name": "Idea Generator",
-                "slug": "idea-generator"
             }
         ]
     },
@@ -228,20 +186,8 @@
         "slug": "relationship-tools",
         "tools": [
             {
-                "name": "Date Night Planner",
-                "slug": "date-night-planner"
-            },
-            {
-                "name": "Relationship Milestone Tracker",
-                "slug": "relationship-milestone-tracker"
-            },
-            {
-                "name": "Love Letter Generator",
-                "slug": "love-letter-generator"
-            },
-            {
-                "name": "Conflict Resolution Guide",
-                "slug": "conflict-resolution-guide"
+                "name": " Letter Generator",
+                "slug": "letter-generator"
             }
         ]
     },
@@ -249,10 +195,6 @@
         "category": "Social Media Tools",
         "slug": "social-media-tools",
         "tools": [
-            {
-                "name": "Social Media Post Scheduler",
-                "slug": "social-media-post-scheduler"
-            },
             {
                 "name": "Hashtag Generator",
                 "slug": "hashtag-generator"
@@ -272,14 +214,6 @@
         "slug": "tech-and-gadgets-tools",
         "tools": [
             {
-                "name": "IP Address Locator",
-                "slug": "ip-address-locator"
-            },
-            {
-                "name": "Device Compatibility Checker",
-                "slug": "device-compatibility-checker"
-            },
-            {
                 "name": "Internet Speed Test",
                 "slug": "internet-speed-test"
             },
@@ -293,6 +227,10 @@
         "category": "Time & Date Tools",
         "slug": "time-and-date-tools",
         "tools": [
+            {
+                "name": "Calendar",
+                "slug": "world-calendar"
+            },
             {
                 "name": "Time Zone Converter",
                 "slug": "time-zone-converter"
@@ -328,16 +266,8 @@
                 "slug": "namaj"
             },
             {
-                "name": "Tafsir",
-                "slug": "tafsir"
-            },
-            {
-                "name": "Islamic History",
-                "slug": "islamic-history"
-            },
-            {
-                "name": "Fiqh",
-                "slug": "fiqh"
+                "name": "Arabic Date  Convert",
+                "slug": "islamic-date-conversion"
             }
         ]
     },

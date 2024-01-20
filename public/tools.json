@@ -12,6 +12,10 @@
                 "slug": "age-calculator"
             },
             {
+                "name": "Percentage Calculator",
+                "slug": "percentage-calculator"
+            },
+            {
                 "name": "BMI Calculator",
                 "slug": "bmi-calculator"
             },
@@ -146,6 +150,10 @@
         "slug": "language-tools",
         "tools": [
             {
+                "name": "Dictionary",
+                "slug": "dictionary"
+            },
+            {
                 "name": "Language Translation",
                 "slug": "language-translate"
             },
@@ -278,6 +286,10 @@
             {
                 "name": "WhatsApp links | Walink",
                 "slug": "create-whatsapp-links-walink"
+            },
+            {
+                "name": "Youtube Thumbnails Download",
+                "slug": "youtube-thumbnails"
             },
             {
                 "name": "Unit Converter",

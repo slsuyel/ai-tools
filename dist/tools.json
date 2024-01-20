@@ -268,10 +268,6 @@
             {
                 "name": "Arabic Date  Convert",
                 "slug": "islamic-date-conversion"
-            },
-            {
-                "name": "Arabic Calendar",
-                "slug": "calendar"
             }
         ]
     },
